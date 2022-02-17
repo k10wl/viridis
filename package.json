@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "product_shop",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/server",
+      "packages/client"
+    ]
+  },
+  "scripts": {
+    "server": "yarn workspace @product_shop/server",
+    "server:dev": "yarn server dev",
+    "client": "yarn workspace @product_shop/client",
+    "client:dev": "yarn client dev",
+    "dev": "yarn client:dev & yarn server:dev"
+  }
+}
