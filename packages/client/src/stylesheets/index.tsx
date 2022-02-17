@@ -4,7 +4,7 @@ import Colors from "./Colors";
 import ResetStyles from "./ResetStyles";
 import Fonts from "./Fonts";
 
-const GlobalStyles = () => (
+const GlobalStyles: React.FC = () => (
   <>
     <Colors />
     <ResetStyles />

@@ -1,20 +1,24 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React from "react";
 
 import { ButtonBase } from "./styles";
 import { buttonTransition, buttonVariants } from "./animations";
 
 type ButtonT = {
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   type?: "button" | "submit";
-  children: ReactNode;
+  children: React.ReactNode;
+  width?: number;
+  height?: number;
 };
 
-const Button: FunctionComponent<ButtonT> = ({
+const Button: React.FC<ButtonT> = ({
   onClick,
   disabled = false,
   type = "button",
   children,
+  width,
+  height,
 }) => (
   <ButtonBase
     variants={buttonVariants}
@@ -24,9 +28,14 @@ const Button: FunctionComponent<ButtonT> = ({
     whileTap={disabled ? "" : "tap"}
     whileFocus={disabled ? "" : "focus"}
     transition={buttonTransition}
-    onClick={onClick}
+    onClick={(clickEvent): void => {
+      clickEvent.stopPropagation();
+      onClick(clickEvent);
+    }}
     disabled={disabled}
     type={type}
+    width={width}
+    height={height}
   >
     {children}
   </ButtonBase>
