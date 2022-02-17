@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/*
+
+
+# Editors and IDEs
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/common.code-snippets
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+log
+
+# Misc
+.DS_Store
+
+# Environment
+.env
+
+/dist/
+
+
+# Packages
+packages/*/dist
+packages/*/build
+packages/*/log
+packages/*/.env
+packages/*/node_modules
