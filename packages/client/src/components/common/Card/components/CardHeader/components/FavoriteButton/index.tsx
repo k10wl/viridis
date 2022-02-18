@@ -1,12 +1,10 @@
-import React, { useCallback, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-
-import { ReactComponent as HeartRegular } from "src/static/icons/heart/heart-regular.svg";
-import { ReactComponent as HeartSolid } from "src/static/icons/heart/heart-solid.svg";
+import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { textColor1, accentColor4 } from "src/stylesheets/Colors";
 
-import { FavoriteButtonBase } from "./styles";
+import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from "./styles";
+import { FavoriteButtonVariants, FavoriteButtonTransition } from "./animations";
 
 export type FavoriteButtonT = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -15,29 +13,44 @@ export type FavoriteButtonT = {
 
 const FavoriteButton: React.FC<FavoriteButtonT> = ({ onClick, favorite }) => {
   const [fav, setFav] = useState(favorite);
-  const animate = useAnimation();
-
-  const changeState = useCallback(async () => {
-    await animate.start({ opacity: 0, scale: 0.75 });
-    setFav(!fav);
-    await animate.start({ opacity: 1, scale: 1 });
-  }, [fav]);
 
   return (
     <FavoriteButtonBase
       onClick={(clickEvent): void => {
         clickEvent.stopPropagation();
-        changeState();
+        setFav(!fav);
         onClick(clickEvent);
       }}
     >
-      <motion.div animate={animate} transition={{ duration: 0.15 }}>
+      <AnimatePresence exitBeforeEnter initial={false}>
         {fav ? (
-          <HeartSolid fill={accentColor4} data-testid="favorite-icon" />
+          <HeartSolidSVG
+            width="100%"
+            key="favorite"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            whileHover="hover"
+            fill={accentColor4}
+            variants={FavoriteButtonVariants}
+            transition={FavoriteButtonTransition}
+            data-testid="favorite-icon"
+          />
         ) : (
-          <HeartRegular fill={textColor1} data-testid="regular-icon" />
+          <HeartRegularSVG
+            width="100%"
+            key="regular"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            whileHover="hover"
+            fill={textColor1}
+            variants={FavoriteButtonVariants}
+            transition={FavoriteButtonTransition}
+            data-testid="regular-icon"
+          />
         )}
-      </motion.div>
+      </AnimatePresence>
     </FavoriteButtonBase>
   );
 };
