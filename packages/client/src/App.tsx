@@ -1,7 +1,7 @@
 import React from "react";
 
 import Router from "./router";
-import NavBar from "./components/common/NavBar";
+import { NavBar } from "./components";
 
 const App: React.FC = () => (
   <>

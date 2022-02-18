@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-
 import { Provider } from "react-redux";
 
-import store from "./store";
-
-import Router from "./router";
+import App from "./App";
 
 import GlobalStyles from "./stylesheets";
+
+import store from "./store";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -17,7 +16,7 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <GlobalStyles />
-        <Router />
+        <App />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
