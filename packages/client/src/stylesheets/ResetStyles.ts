@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { backgroundColor1 } from "./Colors";
 
 const ResetStyles = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -20,6 +21,10 @@ const ResetStyles = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+  }
+  
+  body {
+    background-color: ${backgroundColor1};
   }
 
   /* HTML5 display-role reset for older browsers */
