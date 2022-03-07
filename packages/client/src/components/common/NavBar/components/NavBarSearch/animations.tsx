@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import {
   useAnimation,
   AnimationControls,
@@ -52,7 +52,7 @@ type useBoxAnimationsT = ({
   setOpenSearch,
 }: {
   searchBaseRef: React.RefObject<HTMLSpanElement | null>;
-  inputRef: React.RefObject<HTMLSpanElement | null>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
   openSearch: boolean;
   setOpenSearch: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
@@ -70,6 +70,12 @@ export const useBoxAnimations: useBoxAnimationsT = ({
   const animateBase = useAnimation();
   const animateInput = useAnimation();
 
+  useEffect(() => {
+    if (inputRef && inputRef.current && !inputRef.current.disabled) {
+      inputRef.current.focus();
+    }
+  }, [inputRef, openSearch]);
+
   const focusAnimation = useCallback(
     async (bodyCheck: boolean) => {
       if (!searchBaseRef.current) {
@@ -84,9 +90,6 @@ export const useBoxAnimations: useBoxAnimationsT = ({
       if (searchBaseRef.current.contains(document.activeElement)) {
         animateBase.start(baseFocus);
         animateInput.start(inputFocus);
-        if (!openSearch) {
-          inputRef.current?.focus();
-        }
         return;
       }
 
