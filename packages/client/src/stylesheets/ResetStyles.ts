@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { accentColor4, backgroundColor1 } from "./Colors";
+
+import { backgroundColor1 } from "./Colors";
 
 const ResetStyles = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -27,32 +28,6 @@ const ResetStyles = createGlobalStyle`
     background-color: ${backgroundColor1};
   }
   
-  *, * > * {
-    &:focus-visible {
-      position: relative;
-      overflow: hidden;
-      &::after {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 1px;
-        height: 1px;
-        opacity: 50%;
-        border-radius: 50%;
-        animation: pulse-animation 2s infinite alternate;
-
-        @keyframes pulse-animation {
-          0% {
-            box-shadow: 0 0 0 10px ${accentColor4};
-          }
-          100% {
-            box-shadow: 0 0 0 20px ${accentColor4};
-          }
-        }
-      }
-    }
-  }
-
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
