@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { accentColor2, accentColor4 } from "src/stylesheets/Colors";
+import { accentColor1, primaryColor1 } from "src/stylesheets/Colors";
 
 export const CardBase = styled(motion.div).attrs({
   tabIndex: 0,
@@ -17,13 +17,13 @@ export const CardBase = styled(motion.div).attrs({
   width: 340px;
   height: 550px;
 
-  border: 2px solid ${accentColor2};
+  border: 2px solid ${accentColor1};
   border-radius: 7px;
 
   margin: 20px;
 
   &:focus-visible {
-    outline: 3px solid ${accentColor4}80;
+    outline: 3px solid ${primaryColor1}80;
     outline-offset: 3px;
   }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { accentColor4 } from "src/stylesheets/Colors";
+import { primaryColor1 } from "src/stylesheets/Colors";
 
 import { ReactComponent as HeartRegular } from "src/static/icons/heart/heart-regular.svg";
 import { ReactComponent as HeartSolid } from "src/static/icons/heart/heart-solid.svg";
@@ -32,7 +32,7 @@ export const FavoriteButtonBase = styled.button.attrs({
   cursor: pointer;
 
   &:focus-visible {
-    outline: 3px solid ${accentColor4}80;
+    outline: 3px solid ${primaryColor1}80;
     outline-offset: 3px;
   }
 `;

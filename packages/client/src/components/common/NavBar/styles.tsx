@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { NavLink } from "react-router-dom";
 
-import { backgroundColor1, accentColor2 } from "src/stylesheets/Colors";
+import { backgroundColor1, accentColor1 } from "src/stylesheets/Colors";
 import { motion } from "framer-motion";
 
 export const NavBarBase = styled.header`
@@ -12,7 +12,7 @@ export const NavBarBase = styled.header`
 
   width: 100%;
   height: 69px;
-  background-color: ${accentColor2};
+  background-color: ${accentColor1};
 
   padding: 0 50px;
 `;

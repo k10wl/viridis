@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ReactComponent as SearchSvg } from "src/static/icons/magnifying-glass-solid.svg";
 
 import {
-  accentColor7,
+  accentColor3,
   backgroundColor1,
   textColor1,
 } from "src/stylesheets/Colors";
@@ -14,7 +14,7 @@ export const SearchBase = styled(motion.span).attrs({
 })`
   display: flex;
   margin-left: auto;
-  background-color: ${accentColor7};
+  background-color: ${accentColor3};
   border-radius: 25px;
 `;
 
@@ -31,7 +31,7 @@ export const SearchButton = styled(motion.button)`
   border-radius: 50%;
   outline: none;
 
-  background-color: ${accentColor7};
+  background-color: ${accentColor3};
 
   cursor: pointer;
 `;
