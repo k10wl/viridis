@@ -4,7 +4,7 @@ import {
   accentColor2,
   backgroundColor1,
   backgroundColor3,
-} from "../../../stylesheets/Colors";
+} from "src/stylesheets/Colors";
 
 export const cardBaseVariants: Variants = {
   rest: {

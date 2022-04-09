@@ -207,16 +207,20 @@ exports[`Card component 1`] = `
         data-testid="favorite-button"
         onClick={[Function]}
       >
-        <div
-          style={Object {}}
+        <svg
+          data-testid="regular-icon"
+          fill="#bebab9"
+          style={
+            Object {
+              "opacity": 1,
+              "transform": "none",
+              "transformOrigin": "center",
+            }
+          }
+          width="100%"
         >
-          <svg
-            data-testid="regular-icon"
-            fill="#bebab9"
-          >
-            heart-regular.svg
-          </svg>
-        </div>
+          heart-regular.svg
+        </svg>
       </button>
     </div>
     <img

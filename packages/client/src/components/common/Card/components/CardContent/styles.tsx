@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import { textColor2, textColor3 } from "src/stylesheets/Colors";
 
