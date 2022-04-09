@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { magnifyingGlassVariants, useBoxAnimations } from "./animations";
 
@@ -32,6 +32,12 @@ const NavBarSearch: React.FC = () => {
       setSearchInput(changeEvent.currentTarget.value),
     [searchInput, setSearchInput]
   );
+
+  useEffect(() => {
+    if (inputRef && inputRef.current && !inputRef.current.disabled) {
+      inputRef.current.focus();
+    }
+  }, [inputRef]);
 
   return (
     <SearchBase
