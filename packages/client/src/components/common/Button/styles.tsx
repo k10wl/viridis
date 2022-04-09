@@ -1,7 +1,7 @@
 import styled, { StyledProps } from "styled-components";
 import { motion } from "framer-motion";
 
-import { accentColor4 } from "src/stylesheets/Colors";
+import { primaryColor1 } from "src/stylesheets/Colors";
 
 export type ButtonBaseT = {
   height?: number;
@@ -24,7 +24,7 @@ export const ButtonBase = styled(motion.button)<StyledProps<ButtonBaseT>>`
   }
 
   &:focus-visible {
-    outline: 3px solid ${accentColor4}80;
+    outline: 3px solid ${primaryColor1}80;
     outline-offset: 1px;
   }
 `;

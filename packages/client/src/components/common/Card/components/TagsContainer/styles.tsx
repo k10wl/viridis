@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import {
-  accentColor2,
+  accentColor1,
   backgroundColor1,
   backgroundColor3,
 } from "src/stylesheets/Colors";
@@ -39,7 +39,7 @@ export const CardTag = styled.li`
   align-self: center;
 
   color: ${backgroundColor1};
-  background-color: ${accentColor2};
+  background-color: ${accentColor1};
 
   font-family: "Roboto Thin", sans-serif;
   font-size: 0.75rem;

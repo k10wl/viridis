@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import { accentColor4 } from "./Colors";
+import { primaryColor1 } from "./Colors";
 
 const focusBase = `
       position: absolute;
@@ -10,7 +10,7 @@ const focusBase = `
       display: block;
       width: 100%;
       height: 100%;
-      background-color: ${accentColor4};
+      background-color: ${primaryColor1};
       mix-blend-mode: lighten;
       opacity: 33%;
       border-radius: 50%;

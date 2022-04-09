@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { textColor1, accentColor4 } from "src/stylesheets/Colors";
+import { textColor1, primaryColor1 } from "src/stylesheets/Colors";
 
 import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from "./styles";
 import { FavoriteButtonVariants, FavoriteButtonTransition } from "./animations";
@@ -31,7 +31,7 @@ const FavoriteButton: React.FC<FavoriteButtonT> = ({ onClick, favorite }) => {
             animate="animate"
             exit="exit"
             whileHover="hover"
-            fill={accentColor4}
+            fill={primaryColor1}
             variants={FavoriteButtonVariants}
             transition={FavoriteButtonTransition}
             data-testid="favorite-icon"

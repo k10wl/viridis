@@ -1,7 +1,7 @@
 import { Variants, Transition } from "framer-motion";
 
 import {
-  accentColor2,
+  accentColor1,
   backgroundColor1,
   backgroundColor3,
 } from "src/stylesheets/Colors";
@@ -12,11 +12,11 @@ export const cardBaseVariants: Variants = {
   },
   hover: {
     backgroundColor: backgroundColor3,
-    boxShadow: `0 0 5px 0 ${accentColor2}`,
+    boxShadow: `0 0 5px 0 ${accentColor1}`,
   },
   tap: {
     backgroundColor: backgroundColor3,
-    boxShadow: `0 0 0px 0 ${accentColor2}`,
+    boxShadow: `0 0 0px 0 ${accentColor1}`,
   },
 };
 
