@@ -1,5 +1,11 @@
 import React from "react";
 
-const Homepage: React.FC = () => <div>Homepage</div>;
+import { Hero } from "./components";
+
+const Homepage: React.FC = () => (
+  <main>
+    <Hero />
+  </main>
+);
 
 export default Homepage;
