@@ -14,6 +14,7 @@ export const accentColor3 = "#183634";
 export const accentColor4 = "#c67258";
 export const accentColor5 = "#bc684e";
 export const accentColor6 = "#8d4f3a";
+export const accentColor7 = "#2f605d";
 
 const Colors = createGlobalStyle`
   :root {
@@ -30,6 +31,7 @@ const Colors = createGlobalStyle`
     --accent-color-4: ${accentColor4};
     --accent-color-5: ${accentColor5};
     --accent-color-6: ${accentColor6};
+    --accent-color-7: ${accentColor7};
   }
 `;
 
