@@ -67,8 +67,17 @@
     "no-unused-vars": "off",
     "import/prefer-default-export": "off",
     "object-curly-newline": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      }
+    }
+  ],
   "settings": {
     "import/resolver": {
       "node": {

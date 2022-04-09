@@ -1,11 +1,16 @@
-import styled from "styled-components";
+import styled, { StyledProps } from "styled-components";
 import { motion } from "framer-motion";
 
 import { accentColor4 } from "src/stylesheets/Colors";
 
-export const ButtonBase = styled(motion.button)`
-  width: 150px;
-  height: 30px;
+export type ButtonBaseT = {
+  height?: number;
+  width?: number;
+};
+
+export const ButtonBase = styled(motion.button)<StyledProps<ButtonBaseT>>`
+  min-width: ${({ width }): number => width || 150}px;
+  height: ${({ height }): number => height || 30}px;
 
   outline: none;
   border: none;

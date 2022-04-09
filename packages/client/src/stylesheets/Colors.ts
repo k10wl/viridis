@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const backgroundColor1 = "#fbfdfd";
 export const backgroundColor2 = "#f1f4f4";
+export const backgroundColor3 = "#f2f3f5";
 
 export const textColor1 = "#bebab9";
 export const textColor2 = "#696262";

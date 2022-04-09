@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px 10px 5px;
+}
+
+.c2 {
+  padding: 0 5px;
+  color: #696262;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  border: none;
+  border-radius: 50%;
+  padding: 3px 0 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.c3:focus-visible {
+  outline: 3px solid #c6725880;
+  outline-offset: 3px;
+}
+
+.c4 {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.c5 {
+  padding: 10px 10px 10px;
+  color: #121111;
+  font-family: "PT Serif Bold",serif;
+  font-size: 1.125rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c6 {
+  padding: 0 10px;
+  color: #696262;
+  font-family: "Roboto Thin",sans-serif;
+  font-size: 0.875rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.c10 {
+  min-width: 150px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-family: "Roboto",sans-serif;
+  font-size: 1rem;
+}
+
+.c10:hover {
+  cursor: pointer;
+}
+
+.c10:focus-visible {
+  outline: 3px solid #c6725880;
+  outline-offset: 1px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 143px;
+  margin-top: auto;
+  padding: 10px 10px;
+  background-color: #f2f3f5;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-height: 66px;
+  overflow: hidden;
+  list-style-type: none;
+}
+
+.c9 {
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #fbfdfd;
+  background-color: #244e4b;
+  font-family: "Roboto Thin",sans-serif;
+  font-size: 0.75rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+  width: 340px;
+  height: 550px;
+  border: 2px solid #244e4b;
+  border-radius: 7px;
+  margin: 20px;
+}
+
+.c0:focus-visible {
+  outline: 3px solid #c6725880;
+  outline-offset: 3px;
+}
+
+<div
+  className="c0"
+  data-testid="card"
+  onClick={[MockFunction]}
+  onKeyPress={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#fbfdfd",
+    }
+  }
+  tabIndex={0}
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <span>
+        <svg
+          fill="#bebab9"
+          width={14}
+        >
+          eye-regular.svg
+        </svg>
+        <span
+          className="c2"
+        >
+          3
+        </span>
+      </span>
+      <button
+        className="c3"
+        data-testid="favorite-button"
+        onClick={[Function]}
+      >
+        <div
+          style={Object {}}
+        >
+          <svg
+            data-testid="regular-icon"
+            fill="#bebab9"
+          >
+            heart-regular.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <img
+      alt="Orexis, orgia, et ausus."
+      className="c4"
+      data-testid="image"
+      src="Eheu, homo!"
+    />
+    <p
+      className="c5"
+    >
+      Orexis, orgia, et ausus.
+    </p>
+    <p
+      className="c6"
+    >
+      Cur turpis observare?
+    </p>
+  </div>
+  <div
+    className="c7"
+  >
+    <ul
+      className="c8"
+    >
+      <li
+        className="c9"
+      >
+        Planeta
+      </li>
+      <li
+        className="c9"
+      >
+        Brodiums
+      </li>
+    </ul>
+    <button
+      className="c10"
+      disabled={false}
+      height={50}
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c67258",
+          "border": "#c67258 solid 0",
+          "color": "#fbfdfd",
+        }
+      }
+      type="button"
+    >
+      Open recipe in new page
+    </button>
+  </div>
+</div>
+`;

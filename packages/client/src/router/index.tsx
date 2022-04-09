@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router";
 
 import Homepage from "src/pages/Homepage";
 
-const Router = () => (
+const Router: React.FC = () => (
   <Routes>
     <Route path="/" element={<Homepage />} />
   </Routes>
