@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import { textColor1 } from "src/stylesheets/Colors";
 import GlobalContainer from "src/stylesheets/GlobalContainer";
@@ -7,7 +8,7 @@ type TitleT = {
   color?: string;
 };
 
-export const Wrapper = styled(GlobalContainer)`
+export const Wrapper = styled(motion(GlobalContainer))`
   padding-top: 50px;
   padding-left: 125px;
   max-width: 1200px;
@@ -25,7 +26,9 @@ export const Wrapper = styled(GlobalContainer)`
   }
 `;
 
-export const TextContainer = styled.div`
+export const TitleLetterContainer = motion.div;
+
+export const BottomTitleContainer = styled(motion.div)`
   display: flex;
   text-align: right;
   justify-content: flex-end;
@@ -48,11 +51,14 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const Title = styled.h1<TitleT>`
+export const TitleLetter = styled(motion.h1)<TitleT>`
+  display: inline-block;
   font-size: 5rem;
   letter-spacing: 0.15rem;
   font-family: "PT Serif", sans-serif;
   color: ${({ color }): string => color || textColor1};
+  white-space: pre;
+
   @media (max-width: 1200px) {
     font-size: 4rem;
   }
