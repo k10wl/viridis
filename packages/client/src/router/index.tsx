@@ -1,13 +1,15 @@
 import React from "react";
-import { Routes, Route } from "react-router";
+import { RouteObject, useRoutes } from "react-router";
 
-import { Homepage, Catalog } from "src/pages";
+import { Catalog, Homepage } from "src/pages";
 
-const Router: React.FC = () => (
-  <Routes>
-    <Route path="/" element={<Homepage />} />
-    <Route path="/catalog" element={<Catalog />} />
-  </Routes>
-);
+type RouteT = RouteObject & { name: string; path: string };
+
+export const routes: RouteT[] = [
+  { path: "/", name: "Homepage", element: <Homepage /> },
+  { path: "/catalog", name: "Catalog", element: <Catalog /> },
+];
+
+const Router: React.FC = () => useRoutes(routes);
 
 export default Router;
