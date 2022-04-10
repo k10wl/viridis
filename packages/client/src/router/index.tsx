@@ -10,6 +10,4 @@ export const routes: RouteT[] = [
   { path: "/catalog", name: "Catalog", element: <Catalog /> },
 ];
 
-const Router: React.FC = () => useRoutes(routes);
-
-export default Router;
+export const Router: React.FC = () => useRoutes(routes);

@@ -1,9 +1,13 @@
 import React from "react";
-
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-import Router from "./router";
-import { NavBar } from "./components";
+
+import { Router } from "./router";
 import { useStyledUtils } from "./hooks";
+import store from "./store";
+import GlobalStyles from "./stylesheets";
+import { NavBar } from "./components";
 
 const App: React.FC = () => {
   const utils = useStyledUtils();
@@ -13,10 +17,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <NavBar />
-      <Router />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <BrowserRouter>
+          <NavBar />
+          <Router />
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   );
 };
 
