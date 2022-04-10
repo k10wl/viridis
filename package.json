@@ -5,7 +5,8 @@
   "workspaces": {
     "packages": [
       "packages/server",
-      "packages/client"
+      "packages/client",
+      "packages/shared"
     ]
   },
   "scripts": {
