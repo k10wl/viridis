@@ -1,6 +1,7 @@
 {
   "private": true,
-  "name": "product_shop",
+  "name": "viridis",
+  "version": "0.1",
   "license": "MIT",
   "workspaces": {
     "packages": [
@@ -10,9 +11,9 @@
     ]
   },
   "scripts": {
-    "server": "yarn workspace @product_shop/server",
+    "server": "yarn workspace @viridis/server",
     "server:dev": "yarn server dev",
-    "client": "yarn workspace @product_shop/client",
+    "client": "yarn workspace @viridis/client",
     "client:dev": "yarn client dev",
     "dev": "yarn client:dev & yarn server:dev"
   }

@@ -1,6 +1,6 @@
 {
-  "name": "@product_shop/client",
-  "version": "0.1.0",
+  "name": "@viridis/client",
+  "version": "0.1",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",

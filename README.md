@@ -1,10 +1,10 @@
 <h1 align="center">
-    Product shop? Create branding name.
+    Viridis
 </h1>
 
 ___
 ## About:
-This is monorepo MERN project that helps with cooking.  
+**Viridis** is monorepo MERN project that helps with cooking.  
 
 App was created to help with picking recipes using available or
 preferable ingredients as filters.
@@ -17,8 +17,8 @@ ___
 ## To install and run application locally:
 
 #### Clone project and install dependencies:
-1.`git clone https://github.com/k10wl/product_shop` TODO: ADD LINK!  
-2.`cd product_shop`  
+1.`git clone https://github.com/k10wl/viridis`  
+2.`cd viridis`  
 3.`yarn`  
 
 #### Populate .env files with required info.

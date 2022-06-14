@@ -1,6 +1,6 @@
 {
-  "name": "@product_shop/server",
-  "version": "1.0.0",
+  "name": "@viridis/server",
+  "version": "0.1",
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
