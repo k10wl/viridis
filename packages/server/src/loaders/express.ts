@@ -5,7 +5,11 @@ import cookieParser from "cookie-parser";
 
 import routes from "../api";
 
-const expressLoader = ({ expressApp }: { expressApp: Application }) => {
+const expressLoader = ({
+  expressApp,
+}: {
+  expressApp: Application;
+}): Application => {
   expressApp.get("/status", (req, res) => {
     res.status(200).end();
   });

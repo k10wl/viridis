@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import reactRenderer from "react-test-renderer";
 
@@ -11,6 +11,7 @@ test("Button test", () => {
   const tree = reactRenderer
     .create(<Button onClick={onClick}>snapshot</Button>)
     .toJSON();
+
   expect(tree).toMatchSnapshot();
 
   const { rerender } = render(<Button onClick={onClick}>button text</Button>);

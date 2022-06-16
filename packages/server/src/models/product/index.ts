@@ -4,9 +4,9 @@ import {
   AccessoriesCategories,
   Category,
   CoffeeCategories,
+  ProductType,
   SnacksCategories,
   TeaCategories,
-  ProductType,
 } from "../../types";
 
 const productSchema = new mongoose.Schema<ProductType>({
@@ -22,6 +22,7 @@ const productSchema = new mongoose.Schema<ProductType>({
       type: String,
       validate() {
         const product = this as ProductType;
+
         switch (product.specification.category) {
           case Category.coffee:
             return Object.values(CoffeeCategories).includes(

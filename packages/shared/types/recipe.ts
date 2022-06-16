@@ -1,4 +1,4 @@
-import { CATEGORIES_TREE } from "constants/categoriesTree";
+import { CATEGORIES_TREE } from "@root/constants";
 
 export interface RecipeT {
   _id: string;

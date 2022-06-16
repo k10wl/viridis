@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 
 import { CardContent, CardHeader, TagsContainer } from "./components";
 import { CardBase } from "./styles";
-import { cardBaseVariants, cardBaseTransition } from "./animations";
+import { cardBaseTransition, cardBaseVariants } from "./animations";
 
 export type CardT = {
   views: number;
@@ -55,4 +55,5 @@ const Card: React.FC<CardT> = ({
     </CardBase>
   );
 };
+
 export default Card;

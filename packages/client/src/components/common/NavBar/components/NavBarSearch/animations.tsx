@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect } from "react";
 import {
-  useAnimation,
   AnimationControls,
   TargetAndTransition,
   Transition,
+  useAnimation,
   Variants,
 } from "framer-motion";
 
@@ -84,12 +84,14 @@ export const useBoxAnimations: useBoxAnimationsT = ({
 
       if (document.activeElement === document.body && !bodyCheck) {
         setTimeout(() => focusAnimation(true));
+
         return;
       }
 
       if (searchBaseRef.current.contains(document.activeElement)) {
         animateBase.start(baseFocus);
         animateInput.start(inputFocus);
+
         return;
       }
 

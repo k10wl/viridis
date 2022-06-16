@@ -1,7 +1,7 @@
 import React from "react";
 import reactRenderer from "react-test-renderer";
 
-import { screen, render, fireEvent } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import Card from "../index";
 
@@ -29,6 +29,7 @@ test("Card component", () => {
       />
     )
     .toJSON();
+
   expect(tree).toMatchSnapshot();
 
   render(
@@ -60,6 +61,7 @@ test("Card component", () => {
 
   properties.tags.forEach((tag) => {
     const tagNode = screen.getByText(tag);
+
     expect(tagNode).toBeInTheDocument();
   });
 

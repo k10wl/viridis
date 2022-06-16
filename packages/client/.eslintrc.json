@@ -4,33 +4,24 @@
     "es2021": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:jest/recommended",
-    "airbnb",
-    "prettier",
-    "plugin:prettier/recommended"
+    "plugin:react/recommended"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    }
   },
   "plugins": [
-    "react",
-    "@typescript-eslint",
-    "eslint-plugin-prettier",
-    "jest"
+    "react"
   ],
+  "root": false,
   "rules": {
-    "prettier/prettier": "error",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
     "react/jsx-filename-extension": [
       1,
       {
@@ -40,55 +31,7 @@
         ]
       }
     ],
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "arrow-function"
-      }
-    ],
-    "quotes": [
-      2,
-      "double"
-    ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never",
-        "mjs": "never"
-      }
-    ],
-    "comma-dangle": "off",
     "react/jsx-one-expression-per-line": "off",
-    "@typescript-eslint/no-unused-vars": "error",
-    "no-unused-vars": "off",
-    "import/prefer-default-export": "off",
-    "object-curly-newline": "off",
-    "react/require-default-props": "off",
-    "@typescript-eslint/explicit-function-return-type": "off"
-  },
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": ["error"]
-      }
-    }
-  ],
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["."],
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    }
+    "react/require-default-props": "off"
   }
 }

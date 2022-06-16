@@ -15,6 +15,7 @@ import { ProductType } from "../../types";
 
 export const getProducts = async (req: Request, res: Response) => {
   const products = await getAllProducts();
+
   return res.status(200).json(products);
 };
 
@@ -42,6 +43,7 @@ export const getAllProductsByQuery = async (req: Request, res: Response) => {
     };
 
     let tags = req.query.tags as string;
+
     if (!tags) {
       tags = "";
     }
@@ -92,6 +94,7 @@ export const postProduct = async (
     const product = req.body;
 
     const { error } = isValidProduct("POST", product);
+
     if (error) {
       return res.status(400).json({ error: "Corrupted request.", ...error });
     }
@@ -117,6 +120,7 @@ export const patchProductById = async (
     const requestedUpdate = req.body;
 
     const { error } = isValidProduct("PATCH", requestedUpdate);
+
     if (error) {
       return res.status(400).json({ error: "Corrupted request.", ...error });
     }

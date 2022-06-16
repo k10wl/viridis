@@ -4,7 +4,7 @@ import config from "./config";
 
 import loaders from "./loaders";
 
-const startServer = async () => {
+const startServer: () => Promise<void> = async () => {
   try {
     const expressApp = express();
 

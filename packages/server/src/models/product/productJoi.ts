@@ -1,12 +1,12 @@
-import Joi from "joi";
+import Joi, { ValidationResult } from "joi";
 
 import {
   AccessoriesCategories,
   Category,
   CoffeeCategories,
+  ProductType,
   SnacksCategories,
   TeaCategories,
-  ProductType,
 } from "../../types";
 
 const requestProductJoi = (request: "POST" | "PATCH" | "PUT") => {
@@ -78,6 +78,6 @@ const requestProductJoi = (request: "POST" | "PATCH" | "PUT") => {
 const isValidProduct = (
   request: "POST" | "PATCH" | "PUT",
   product: Partial<ProductType>
-) => requestProductJoi(request).validate(product);
+): ValidationResult => requestProductJoi(request).validate(product);
 
 export default isValidProduct;
