@@ -18,6 +18,8 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <BrowserRouter>
