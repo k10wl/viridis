@@ -1,8 +1,8 @@
 import React from "react";
 
-import { screen, render, fireEvent, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
-import FavoriteButton from "../index";
+import { FavoriteButton } from "../index";
 
 const onClick = jest.fn();
 

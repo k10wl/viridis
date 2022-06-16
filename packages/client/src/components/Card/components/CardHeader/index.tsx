@@ -2,15 +2,15 @@ import React from "react";
 
 import { ReactComponent as EyeIcon } from "src/static/icons/eye-regular.svg";
 import { textColor1 } from "src/stylesheets/Colors";
-import { CardT } from "src/components/common/Card";
+import { CardT } from "../../types";
 
-import { CardViews, CardHeaderBase } from "./styles";
+import { CardHeaderBase, CardViews } from "./styles";
 
 import { FavoriteButton } from "./components";
 
 type CardHeaderT = Pick<CardT, "views" | "favorite">;
 
-const CardHeader: React.FC<CardHeaderT> = ({ views, favorite }) => (
+export const CardHeader: React.FC<CardHeaderT> = ({ views, favorite }) => (
   <CardHeaderBase>
     <span>
       <EyeIcon fill={textColor1} width={14} />
@@ -19,5 +19,3 @@ const CardHeader: React.FC<CardHeaderT> = ({ views, favorite }) => (
     <FavoriteButton onClick={(): void => undefined} favorite={favorite} />
   </CardHeaderBase>
 );
-
-export default CardHeader;

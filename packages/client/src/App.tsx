@@ -6,7 +6,7 @@ import { Router } from "./router";
 import { useStyledUtils } from "./hooks";
 import store from "./store";
 import GlobalStyles from "./stylesheets";
-import { NavBar } from "./components";
+import NavBar from "./components/NavBar";
 
 const App: React.FC = () => {
   const utils = useStyledUtils();

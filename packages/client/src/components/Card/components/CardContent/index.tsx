@@ -1,11 +1,11 @@
 import React from "react";
 
 import { CardDescription, CardImage, CardName } from "./styles";
-import { CardT } from "../../index";
+import { CardT } from "../../types";
 
 type CardContentT = Pick<CardT, "imageSrc" | "name" | "description">;
 
-const CardContent: React.FC<CardContentT> = ({
+export const CardContent: React.FC<CardContentT> = ({
   name,
   imageSrc,
   description,
@@ -16,5 +16,3 @@ const CardContent: React.FC<CardContentT> = ({
     <CardDescription>{description}</CardDescription>
   </>
 );
-
-export default CardContent;

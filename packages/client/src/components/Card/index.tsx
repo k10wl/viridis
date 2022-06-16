@@ -1,18 +1,9 @@
 import React, { useCallback } from "react";
 
-import { CardContent, CardHeader, TagsContainer } from "./components";
+import { CardContent, CardHeader, TagContainer } from "./components";
 import { CardBase } from "./styles";
 import { cardBaseTransition, cardBaseVariants } from "./animations";
-
-export type CardT = {
-  views: number;
-  favorite: boolean;
-  imageSrc: string;
-  name: string;
-  description: string;
-  tags: string[];
-  onClick: () => void;
-};
+import { CardT } from "./types";
 
 const Card: React.FC<CardT> = ({
   views,
@@ -51,7 +42,7 @@ const Card: React.FC<CardT> = ({
           description={description}
         />
       </div>
-      <TagsContainer tags={tags} />
+      <TagContainer tags={tags} />
     </CardBase>
   );
 };

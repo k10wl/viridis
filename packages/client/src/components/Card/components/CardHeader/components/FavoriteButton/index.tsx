@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { textColor1, primaryColor1 } from "src/stylesheets/Colors";
+import { primaryColor1, textColor1 } from "src/stylesheets/Colors";
 
 import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from "./styles";
-import { FavoriteButtonVariants, FavoriteButtonTransition } from "./animations";
+import { FavoriteButtonTransition, FavoriteButtonVariants } from "./animations";
 
 export type FavoriteButtonT = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   favorite: boolean;
 };
 
-const FavoriteButton: React.FC<FavoriteButtonT> = ({ onClick, favorite }) => {
+export const FavoriteButton: React.FC<FavoriteButtonT> = ({
+  onClick,
+  favorite,
+}) => {
   const [fav, setFav] = useState(favorite);
 
   return (
@@ -54,5 +57,3 @@ const FavoriteButton: React.FC<FavoriteButtonT> = ({ onClick, favorite }) => {
     </FavoriteButtonBase>
   );
 };
-
-export default FavoriteButton;

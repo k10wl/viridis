@@ -4,7 +4,7 @@ import { magnifyingGlassVariants, useBoxAnimations } from "./animations";
 
 import { Input, SearchBase, SearchButton, SearchIcon } from "./styles";
 
-const NavBarSearch: React.FC = () => {
+export const NavBarSearch: React.FC = () => {
   const [openSearch, setOpenSearch] = useState(false);
   const [searchInput, setSearchInput] = useState("");
 
@@ -66,5 +66,3 @@ const NavBarSearch: React.FC = () => {
     </SearchBase>
   );
 };
-
-export default NavBarSearch;
