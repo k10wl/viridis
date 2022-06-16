@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-
 import { Router } from "./router";
 import { useStyledUtils } from "./hooks";
 import store from "./store";
@@ -18,8 +17,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
+      {/* @ts-expect-error: types mismatch https://github.com/styled-components/styled-components/issues/3738 */}
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <BrowserRouter>

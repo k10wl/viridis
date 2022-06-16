@@ -29,7 +29,7 @@ const Colors = createGlobalStyle`
     --accent-color-1: ${accentColor1};
     --accent-color-2: ${accentColor1};
     --accent-color-3: ${accentColor2};
-    
+
     --primary-color-1: ${primaryColor1};
     --primary-color-2: ${primaryColor2};
     --primary-color-3: ${primaryColor3};
