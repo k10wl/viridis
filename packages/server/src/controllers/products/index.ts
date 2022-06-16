@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import isValidProduct from "../../models/product/productJoi";
+import isValidProduct from "src/models/product/productJoi";
 import {
   createNewProduct,
   deleteProduct,
@@ -8,8 +8,8 @@ import {
   getProductById,
   getProductsByQuery,
   patchProduct,
-} from "../../services/products";
-import { ProductType } from "../../types";
+} from "src/services/products";
+import { ProductType } from "src/types";
 
 export const getProducts = async (req: Request, res: Response) => {
   const products = await getAllProducts();

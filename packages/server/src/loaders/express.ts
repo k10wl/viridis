@@ -3,7 +3,7 @@ import cookieParser from "cookie-parser";
 import cors, { CorsOptions } from "cors";
 import express, { Application } from "express";
 
-import routes from "../api";
+import routes from "src/api";
 
 const expressLoader = ({
   expressApp,

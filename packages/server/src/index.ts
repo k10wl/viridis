@@ -1,7 +1,7 @@
 import express from "express";
 
-import config from "./config";
-import loaders from "./loaders";
+import config from "src/config";
+import loaders from "src/loaders";
 
 const startServer: () => Promise<void> = async () => {
   try {

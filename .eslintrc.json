@@ -8,6 +8,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
+    "plugin:import/recommended",
     "airbnb",
     "prettier",
     "plugin:prettier/recommended"
@@ -38,6 +39,9 @@
   ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
     "@typescript-eslint/no-unused-vars": "error",
     "arrow-body-style": "off",
     "comma-dangle": "off",
@@ -47,32 +51,20 @@
       {
         "js": "never",
         "jsx": "never",
-        "mjs": "never",
         "ts": "never",
         "tsx": "never"
       }
     ],
+    "import/named": "off",
     "import/no-extraneous-dependencies": "off",
-    "import/prefer-default-export": "off",
-    "no-console": "warn",
     "import/no-unresolved": "error",
-    "no-unused-vars": "off",
-    "object-curly-newline": "off",
-    "newline-before-return": "error",
-    "newline-after-var": "error",
-    "no-shadow": "off",
-    "@typescript-eslint/no-shadow": [
-      "error"
-    ],
-    "prefer-arrow-callback": "off",
-    "prettier/prettier": "error",
-    "quotes": [
-      2,
-      "double"
-    ],
     "import/order": [
       "error",
       {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
         "groups": [
           "builtin",
           "external",
@@ -85,37 +77,46 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "(react|react-dom)",
             "group": "external",
+            "pattern": "(react|react-dom)",
             "position": "before"
           },
           {
+            "group": "internal",
             "pattern": "@viridis/**",
-            "group": "internal",
             "position": "before"
           },
           {
+            "group": "internal",
             "pattern": "src/**",
-            "group": "internal",
             "position": "before"
           },
           {
-            "pattern": "@root/**",
             "group": "parent",
+            "pattern": "@root/**",
             "position": "before"
           },
           {
-            "pattern": "src/types/**",
             "group": "internal",
+            "pattern": "src/types/**",
             "position": "after"
           }
         ],
-        "pathGroupsExcludedImportTypes": [],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+        "pathGroupsExcludedImportTypes": []
       }
+    ],
+    "import/prefer-default-export": "off",
+    "newline-after-var": "error",
+    "newline-before-return": "error",
+    "no-console": "warn",
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "object-curly-newline": "off",
+    "prefer-arrow-callback": "off",
+    "prettier/prettier": "error",
+    "quotes": [
+      2,
+      "double"
     ]
   },
   "settings": {

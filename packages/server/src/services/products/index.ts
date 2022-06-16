@@ -1,5 +1,5 @@
-import Product from "../../models/product";
-import { ProductType } from "../../types";
+import Product from "src/models/product";
+import { ProductType } from "src/types";
 
 export const getAllProducts = async (): Promise<ProductType[]> =>
   Product.find();

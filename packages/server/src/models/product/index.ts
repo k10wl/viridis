@@ -7,7 +7,7 @@ import {
   ProductType,
   SnacksCategories,
   TeaCategories,
-} from "../../types";
+} from "src/types";
 
 const productSchema = new mongoose.Schema<ProductType>({
   specification: {

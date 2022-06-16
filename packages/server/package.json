@@ -4,8 +4,8 @@
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon src/index.ts",
-    "start": "ts-node-dev src/index.ts",
+    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "test": "jest"
   },
   "dependencies": {
@@ -42,6 +42,7 @@
     "prettier-eslint": "^15.0.1",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1",
+    "tsconfig-paths": "^4.0.0",
     "typescript": "^4.7.3"
   },
   "jest": {

@@ -7,7 +7,7 @@ import {
   ProductType,
   SnacksCategories,
   TeaCategories,
-} from "../../types";
+} from "src/types";
 
 const requestProductJoi = (request: "POST" | "PATCH" | "PUT") => {
   let category = Joi.string().valid(

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import config from "../config";
+import config from "src/config";
 
 const mongooseLoader = async () => {
   try {
