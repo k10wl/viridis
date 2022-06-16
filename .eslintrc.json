@@ -1,4 +1,8 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -27,12 +31,11 @@
     "sourceType": "module"
   },
   "plugins": [
+    "import",
     "@typescript-eslint",
     "eslint-plugin-prettier",
-    "import",
     "jest"
   ],
-  "root": true,
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": "error",
@@ -49,7 +52,9 @@
         "tsx": "never"
       }
     ],
+    "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
+    "no-console": "warn",
     "import/no-unresolved": "error",
     "no-unused-vars": "off",
     "object-curly-newline": "off",
@@ -64,6 +69,53 @@
     "quotes": [
       2,
       "double"
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "sibling",
+            "parent"
+          ]
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "(react|react-dom)",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@viridis/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "src/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@root/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "src/types/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
     ]
   },
   "settings": {
@@ -86,7 +138,11 @@
         ]
       },
       "typescript": {
-        "project": "packages/*/tsconfig.json"
+        "project": [
+          "packages/client/tsconfig.json",
+          "packages/server/tsconfig.json",
+          "packages/shared/tsconfig.json"
+        ]
       }
     }
   }

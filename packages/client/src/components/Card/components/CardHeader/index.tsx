@@ -2,11 +2,10 @@ import React from "react";
 
 import { ReactComponent as EyeIcon } from "src/static/icons/eye-regular.svg";
 import { textColor1 } from "src/stylesheets/Colors";
+
 import { CardT } from "../../types";
-
-import { CardHeaderBase, CardViews } from "./styles";
-
 import { FavoriteButton } from "./components";
+import { CardHeaderBase, CardViews } from "./styles";
 
 type CardHeaderT = Pick<CardT, "views" | "favorite">;
 

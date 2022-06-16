@@ -1,11 +1,10 @@
+import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import { useLocation } from "react-router";
-import { AnimateSharedLayout } from "framer-motion";
 
 import { routes } from "src/router";
 
 import { NavBarSearch } from "./components";
-
 import { NavBarBase, RouterActiveLink, RouterNavLink } from "./styles";
 
 const NavBar: React.FC = () => {

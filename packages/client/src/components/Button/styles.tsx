@@ -1,5 +1,5 @@
-import styled, { StyledProps } from "styled-components";
 import { motion } from "framer-motion";
+import styled, { StyledProps } from "styled-components";
 
 import { primaryColor1 } from "src/stylesheets/Colors";
 

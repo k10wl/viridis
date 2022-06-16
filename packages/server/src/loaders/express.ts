@@ -1,7 +1,7 @@
-import express, { Application } from "express";
-import cors, { CorsOptions } from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import cors, { CorsOptions } from "cors";
+import express, { Application } from "express";
 
 import routes from "../api";
 

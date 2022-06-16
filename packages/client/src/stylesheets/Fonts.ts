@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
+import PTSerifBold from "src/static/typography/PT_Serif/PTSerif-Bold.ttf";
+import PTSerifBoldItalic from "src/static/typography/PT_Serif/PTSerif-BoldItalic.ttf";
+import PTSerifItalic from "src/static/typography/PT_Serif/PTSerif-Italic.ttf";
+import PTSerifRegular from "src/static/typography/PT_Serif/PTSerif-Regular.ttf";
 import RobotoBlack from "src/static/typography/Roboto/Roboto-Black.ttf";
 import RobotoBlackItalic from "src/static/typography/Roboto/Roboto-BlackItalic.ttf";
 import RobotoBold from "src/static/typography/Roboto/Roboto-Bold.ttf";
@@ -12,11 +16,6 @@ import RobotoMediumItalic from "src/static/typography/Roboto/Roboto-MediumItalic
 import RobotoRegular from "src/static/typography/Roboto/Roboto-Regular.ttf";
 import RobotoThin from "src/static/typography/Roboto/Roboto-Thin.ttf";
 import RobotoThinItalic from "src/static/typography/Roboto/Roboto-ThinItalic.ttf";
-
-import PTSerifRegular from "src/static/typography/PT_Serif/PTSerif-Regular.ttf";
-import PTSerifItalic from "src/static/typography/PT_Serif/PTSerif-Italic.ttf";
-import PTSerifBold from "src/static/typography/PT_Serif/PTSerif-Bold.ttf";
-import PTSerifBoldItalic from "src/static/typography/PT_Serif/PTSerif-BoldItalic.ttf";
 
 const Fonts = createGlobalStyle`  
   @font-face {

@@ -1,4 +1,3 @@
-import React, { useCallback, useEffect } from "react";
 import {
   AnimationControls,
   TargetAndTransition,
@@ -6,6 +5,7 @@ import {
   useAnimation,
   Variants,
 } from "framer-motion";
+import React, { useCallback, useEffect } from "react";
 
 import { backgroundColor1 } from "src/stylesheets/Colors";
 

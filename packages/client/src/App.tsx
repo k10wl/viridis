@@ -1,12 +1,13 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { Router } from "./router";
+
+import NavBar from "./components/NavBar";
 import { useStyledUtils } from "./hooks";
+import { Router } from "./router";
 import store from "./store";
 import GlobalStyles from "./stylesheets";
-import NavBar from "./components/NavBar";
 
 const App: React.FC = () => {
   const utils = useStyledUtils();

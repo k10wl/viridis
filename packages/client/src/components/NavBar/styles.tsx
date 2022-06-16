@@ -1,9 +1,8 @@
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import { NavLink } from "react-router-dom";
-
 import { backgroundColor1, accentColor1 } from "src/stylesheets/Colors";
-import { motion } from "framer-motion";
 
 export const NavBarBase = styled.header`
   display: flex;

@@ -4,18 +4,18 @@ import { v4 } from "uuid";
 import { accentColor1, primaryColor1 } from "src/stylesheets/Colors";
 
 import {
-  Wrapper,
-  TitleLetterContainer,
-  BottomTitleContainer,
-  TitleLetter,
-} from "./styles";
-import {
   topTitleContainerVariants,
   topTitleLetterVariants,
   andLetterVariants,
   bottomTitleContainerVariants,
   bottomTitleLetterVariants,
 } from "./animations";
+import {
+  Wrapper,
+  TitleLetterContainer,
+  BottomTitleContainer,
+  TitleLetter,
+} from "./styles";
 
 const Hero: React.FC = () => (
   <Wrapper initial="initial" animate="animate">

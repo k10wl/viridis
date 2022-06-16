@@ -1,8 +1,4 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
   "extends": [
     "plugin:react/recommended"
   ],
@@ -14,7 +10,6 @@
   "plugins": [
     "react"
   ],
-  "root": false,
   "rules": {
     "react/function-component-definition": [
       2,

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ButtonBase } from "./styles";
 import { buttonTransition, buttonVariants } from "./animations";
+import { ButtonBase } from "./styles";
 
 type ButtonT = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;

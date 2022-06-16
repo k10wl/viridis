@@ -3,9 +3,8 @@ import { v4 as uuid4 } from "uuid";
 
 import Button from "src/components/Button";
 
-import { CardTag, TagsContainer, TagsList } from "./styles";
-
 import { CardT } from "../../types";
+import { CardTag, TagsContainer, TagsList } from "./styles";
 
 type TagContainerT = Pick<CardT, "tags">;
 

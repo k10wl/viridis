@@ -1,8 +1,9 @@
+import { screen, render, fireEvent } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { screen, render, fireEvent } from "@testing-library/react";
 
 import { routes } from "src/router";
+
 import NavBar from "../index";
 
 test("NavBar", () => {

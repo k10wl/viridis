@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { magnifyingGlassVariants, useBoxAnimations } from "./animations";
-
 import { Input, SearchBase, SearchButton, SearchIcon } from "./styles";
 
 export const NavBarSearch: React.FC = () => {

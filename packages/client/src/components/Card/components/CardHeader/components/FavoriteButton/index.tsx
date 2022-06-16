@@ -1,10 +1,10 @@
-import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
 
 import { primaryColor1, textColor1 } from "src/stylesheets/Colors";
 
-import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from "./styles";
 import { FavoriteButtonTransition, FavoriteButtonVariants } from "./animations";
+import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from "./styles";
 
 export type FavoriteButtonT = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+import isValidProduct from "../../models/product/productJoi";
 import {
   createNewProduct,
   deleteProduct,
@@ -8,9 +9,6 @@ import {
   getProductsByQuery,
   patchProduct,
 } from "../../services/products";
-
-import isValidProduct from "../../models/product/productJoi";
-
 import { ProductType } from "../../types";
 
 export const getProducts = async (req: Request, res: Response) => {

@@ -16,6 +16,7 @@
     "client": "yarn workspace @viridis/client",
     "client:dev": "yarn client dev",
     "shared": "yarn workspace @viridis/shared",
-    "dev": "yarn client:dev & yarn server:dev"
+    "dev": "yarn client:dev & yarn server:dev",
+    "eslint": "eslint"
   }
 }

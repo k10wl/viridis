@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 
+import { cardBaseTransition, cardBaseVariants } from "./animations";
 import { CardContent, CardHeader, TagContainer } from "./components";
 import { CardBase } from "./styles";
-import { cardBaseTransition, cardBaseVariants } from "./animations";
 import { CardT } from "./types";
 
 const Card: React.FC<CardT> = ({

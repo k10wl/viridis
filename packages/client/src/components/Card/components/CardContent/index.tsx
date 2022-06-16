@@ -1,7 +1,7 @@
 import React from "react";
 
-import { CardDescription, CardImage, CardName } from "./styles";
 import { CardT } from "../../types";
+import { CardDescription, CardImage, CardName } from "./styles";
 
 type CardContentT = Pick<CardT, "imageSrc" | "name" | "description">;
 

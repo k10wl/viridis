@@ -1,10 +1,9 @@
-import styled from "styled-components";
 import { motion } from "framer-motion";
-
-import { primaryColor1 } from "src/stylesheets/Colors";
+import styled from "styled-components";
 
 import { ReactComponent as HeartRegular } from "src/static/icons/heart/heart-regular.svg";
 import { ReactComponent as HeartSolid } from "src/static/icons/heart/heart-solid.svg";
+import { primaryColor1 } from "src/stylesheets/Colors";
 
 export const HeartRegularSVG = motion(HeartRegular);
 export const HeartSolidSVG = motion(HeartSolid);
