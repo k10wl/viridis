@@ -1,12 +1,12 @@
 import {
-  breakpointValues,
   breakpointKeys,
+  breakpointValues,
+  createBreakpoints,
+  getValueByKey,
+  maxWidthMedia,
+  minWidthMedia,
   step,
   unit,
-  getValueByKey,
-  minWidthMedia,
-  maxWidthMedia,
-  createBreakpoints,
 } from "../index";
 
 const breakpoints = createBreakpoints();
@@ -46,6 +46,7 @@ test("maxWidthMedia", () => {
 test("createBreakpoints.up", () => {
   breakpointKeys.forEach((key) => {
     const value = getValueByKey(key);
+
     expect(breakpoints.up(breakpointValues[key])).toBe(
       `@media ${minWidthMedia(value)}`
     );
@@ -53,6 +54,7 @@ test("createBreakpoints.up", () => {
 
   for (let key = 0; key < 2000; key += 100) {
     const value = getValueByKey(key);
+
     expect(breakpoints.up(key)).toBe(`@media ${minWidthMedia(value)}`);
   }
 });
@@ -60,6 +62,7 @@ test("createBreakpoints.up", () => {
 test("createBreakpoints.down", () => {
   breakpointKeys.forEach((key) => {
     const value = getValueByKey(key);
+
     expect(breakpoints.down(breakpointValues[key])).toBe(
       `@media ${maxWidthMedia(value)}`
     );
@@ -67,6 +70,7 @@ test("createBreakpoints.down", () => {
 
   for (let key = 0; key < 2000; key += 100) {
     const value = getValueByKey(key);
+
     expect(breakpoints.down(key)).toBe(`@media ${maxWidthMedia(value)}`);
   }
 });

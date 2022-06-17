@@ -1,2 +1,2 @@
-export { CATEGORIES_TREE } from "./categoriesTree";
-export { INGREDIENTS } from "./ingredients";
+export * from "./categories";
+export * from "./ingredients";

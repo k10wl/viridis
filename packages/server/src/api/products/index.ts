@@ -1,12 +1,13 @@
 import { Router } from "express";
+
 import {
   deleteProductById,
+  getAllProductsByQuery,
   getOneProductById,
   getProducts,
   patchProductById,
   postProduct,
-  getAllProductsByQuery,
-} from "../../controllers/products";
+} from "src/controllers/products";
 
 const productsApi = (router: Router) => {
   const route = Router();

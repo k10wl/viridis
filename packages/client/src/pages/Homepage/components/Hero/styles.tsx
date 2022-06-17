@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 
 import { textColor1 } from "src/stylesheets/Colors";
 import GlobalContainer from "src/stylesheets/GlobalContainer";

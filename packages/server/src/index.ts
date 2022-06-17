@@ -1,10 +1,9 @@
 import express from "express";
 
-import config from "./config";
+import config from "src/config";
+import loaders from "src/loaders";
 
-import loaders from "./loaders";
-
-const startServer = async () => {
+const startServer: () => Promise<void> = async () => {
   try {
     const expressApp = express();
 

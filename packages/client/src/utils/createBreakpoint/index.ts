@@ -37,6 +37,7 @@ export const maxWidthMedia = (value: number): string =>
 export const createBreakpoints = (): BreakpointsT => {
   const up = (key: BreakpointT | number): string => {
     const value = getValueByKey(key);
+
     return `@media ${minWidthMedia(value)}`;
   };
 
@@ -51,6 +52,7 @@ export const createBreakpoints = (): BreakpointsT => {
     }
 
     const value = endIndex > 0 ? upperbound : getValueByKey(key);
+
     return `@media ${maxWidthMedia(value)}`;
   };
 
@@ -63,5 +65,6 @@ export const createBreakpoints = (): BreakpointsT => {
 
     return `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`;
   };
+
   return { up, down, between };
 };

@@ -1,11 +1,15 @@
-import express, { Application } from "express";
-import cors, { CorsOptions } from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import cors, { CorsOptions } from "cors";
+import express, { Application } from "express";
 
-import routes from "../api";
+import routes from "src/api";
 
-const expressLoader = ({ expressApp }: { expressApp: Application }) => {
+const expressLoader = ({
+  expressApp,
+}: {
+  expressApp: Application;
+}): Application => {
   expressApp.get("/status", (req, res) => {
     res.status(200).end();
   });
