@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { v4 as uuid4 } from "uuid";
 
 import { Button } from "src/components/Button";
-import { CardProps } from "src/components/Card/types";
+import { CardProps } from "src/components/RecipeCard/types";
 
 import { CardTag, TagsContainer, TagsList } from "./styles";
 

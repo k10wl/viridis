@@ -1,14 +1,16 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 
-import { Card } from "./index";
+import { RecipeCard } from "./index";
 
 export default {
-  title: "Card",
-  component: Card,
-} as ComponentMeta<typeof Card>;
+  title: "RecipeCard",
+  component: RecipeCard,
+} as ComponentMeta<typeof RecipeCard>;
 
-const Template: ComponentStory<typeof Card> = (props) => <Card {...props} />;
+const Template: ComponentStory<typeof RecipeCard> = (props) => (
+  <RecipeCard {...props} />
+);
 
 export const ThreeIngredients = Template.bind({});
 

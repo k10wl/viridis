@@ -5,7 +5,7 @@ import { CardContent, CardHeader, IngredientsContainer } from "./components";
 import { CardBase } from "./styles";
 import { CardProps } from "./types";
 
-export const Card: FunctionComponent<CardProps> = ({
+export const RecipeCard: FunctionComponent<CardProps> = ({
   views,
   favorite,
   description,

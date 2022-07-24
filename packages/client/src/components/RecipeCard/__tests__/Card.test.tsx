@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import reactRenderer from "react-test-renderer";
 
-import { Card } from "../index";
+import { RecipeCard } from "../index";
 
 const properties = {
   views: 3,
@@ -14,10 +14,10 @@ const properties = {
   onClick: jest.fn(),
 };
 
-test("Card component", () => {
+test("RecipeCard component", () => {
   const tree = reactRenderer
     .create(
-      <Card
+      <RecipeCard
         views={properties.views}
         favorite={properties.favorite}
         imageSrc={properties.imageSrc}
@@ -32,7 +32,7 @@ test("Card component", () => {
   expect(tree).toMatchSnapshot();
 
   render(
-    <Card
+    <RecipeCard
       views={properties.views}
       favorite={properties.favorite}
       imageSrc={properties.imageSrc}

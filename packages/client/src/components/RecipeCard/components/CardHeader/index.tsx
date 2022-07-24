@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CardProps } from "src/components/Card/types";
+import { CardProps } from "src/components/RecipeCard/types";
 import { ReactComponent as EyeIcon } from "src/static/icons/eye-regular.svg";
 import { textColor1 } from "src/stylesheets/Colors";
 

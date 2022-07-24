@@ -1,4 +1,4 @@
-import { Variants, Transition } from "framer-motion";
+import { Transition, Variants } from "framer-motion";
 
 export const FavoriteButtonVariants: Variants = {
   initial: {

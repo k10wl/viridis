@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CardProps } from "src/components/Card/types";
+import { CardProps } from "src/components/RecipeCard/types";
 
 import { CardDescription, CardImage, CardName } from "./styles";
 

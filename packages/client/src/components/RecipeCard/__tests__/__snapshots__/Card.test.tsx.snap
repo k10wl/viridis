@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card component 1`] = `
+exports[`RecipeCard component 1`] = `
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
