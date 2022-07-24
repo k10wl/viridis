@@ -1,17 +1,17 @@
-import React, { useCallback } from "react";
+import React, { FunctionComponent, useCallback } from "react";
 
 import { cardBaseTransition, cardBaseVariants } from "./animations";
-import { CardContent, CardHeader, TagContainer } from "./components";
+import { CardContent, CardHeader, IngredientsContainer } from "./components";
 import { CardBase } from "./styles";
-import { CardT } from "./types";
+import { CardProps } from "./types";
 
-const Card: React.FC<CardT> = ({
+export const Card: FunctionComponent<CardProps> = ({
   views,
   favorite,
   description,
   imageSrc,
   name,
-  tags,
+  ingredients,
   onClick,
 }) => {
   const onEnterClick = useCallback(
@@ -42,9 +42,7 @@ const Card: React.FC<CardT> = ({
           description={description}
         />
       </div>
-      <TagContainer tags={tags} />
+      <IngredientsContainer ingredients={ingredients} />
     </CardBase>
   );
 };
-
-export default Card;

@@ -1,15 +1,15 @@
 import React from "react";
 
+import { CardProps } from "src/components/Card/types";
 import { ReactComponent as EyeIcon } from "src/static/icons/eye-regular.svg";
 import { textColor1 } from "src/stylesheets/Colors";
 
-import { CardT } from "../../types";
 import { FavoriteButton } from "./components";
 import { CardHeaderBase, CardViews } from "./styles";
 
-type CardHeaderT = Pick<CardT, "views" | "favorite">;
+type CardHeaderProps = Pick<CardProps, "views" | "favorite">;
 
-export const CardHeader: React.FC<CardHeaderT> = ({ views, favorite }) => (
+export const CardHeader: React.FC<CardHeaderProps> = ({ views, favorite }) => (
   <CardHeaderBase>
     <span>
       <EyeIcon fill={textColor1} width={14} />

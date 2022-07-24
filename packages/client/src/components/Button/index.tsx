@@ -12,7 +12,7 @@ type ButtonT = {
   height?: number;
 };
 
-const Button: React.FC<ButtonT> = ({
+export const Button: React.FC<ButtonT> = ({
   onClick,
   disabled = false,
   type = "button",
@@ -40,5 +40,3 @@ const Button: React.FC<ButtonT> = ({
     {children}
   </ButtonBase>
 );
-
-export default Button;

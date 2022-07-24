@@ -1,9 +1,9 @@
-export type CardT = {
+export type CardProps = {
   views: number;
   favorite: boolean;
   imageSrc: string;
   name: string;
   description: string;
-  tags: string[];
+  ingredients: string[];
   onClick: () => void;
 };

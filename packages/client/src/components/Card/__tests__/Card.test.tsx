@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import reactRenderer from "react-test-renderer";
 
-import Card from "../index";
+import { Card } from "../index";
 
 const properties = {
   views: 3,
@@ -10,7 +10,7 @@ const properties = {
   imageSrc: "Eheu, homo!",
   name: "Orexis, orgia, et ausus.",
   description: "Cur turpis observare?",
-  tags: ["Planeta", "Brodiums"],
+  ingredients: ["Planeta", "Brodiums"],
   onClick: jest.fn(),
 };
 
@@ -23,7 +23,7 @@ test("Card component", () => {
         imageSrc={properties.imageSrc}
         name={properties.name}
         description={properties.description}
-        tags={properties.tags}
+        ingredients={properties.ingredients}
         onClick={properties.onClick}
       />
     )
@@ -38,7 +38,7 @@ test("Card component", () => {
       imageSrc={properties.imageSrc}
       name={properties.name}
       description={properties.description}
-      tags={properties.tags}
+      ingredients={properties.ingredients}
       onClick={properties.onClick}
     />
   );
@@ -58,10 +58,10 @@ test("Card component", () => {
   expect(favoriteNode).toBeInTheDocument();
   expect(descriptionNode).toBeInTheDocument();
 
-  properties.tags.forEach((tag) => {
-    const tagNode = screen.getByText(tag);
+  properties.ingredients.forEach((ingredient) => {
+    const ingredientNode = screen.getByText(ingredient);
 
-    expect(tagNode).toBeInTheDocument();
+    expect(ingredientNode).toBeInTheDocument();
   });
 
   fireEvent.click(cardNode);

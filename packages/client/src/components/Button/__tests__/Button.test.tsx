@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import reactRenderer from "react-test-renderer";
 
-import Button from "../index";
+import { Button } from "../index";
 
 const onClick = jest.fn();
 
@@ -15,7 +15,7 @@ test("Button test", () => {
 
   const { rerender } = render(<Button onClick={onClick}>button text</Button>);
 
-  const buttonNode = screen.getByText(/button text/gi);
+  const buttonNode = screen.getByText(/button text/);
 
   expect(buttonNode).toBeInTheDocument();
   expect(buttonNode).toBeEnabled();
@@ -31,7 +31,7 @@ test("Button test", () => {
 
   onClick.mockReset();
 
-  const disabledButtonNode = screen.getByText(/disabled button/gi);
+  const disabledButtonNode = screen.getByText(/disabled button/);
 
   expect(disabledButtonNode).toBeInTheDocument();
   expect(disabledButtonNode).toBeDisabled();

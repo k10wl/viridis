@@ -1,23 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card component 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 10px 10px 5px;
-}
-
-.c2 {
-  padding: 0 5px;
-  color: #696262;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -47,6 +30,23 @@ exports[`Card component 1`] = `
 .c3:focus-visible {
   outline: 3px solid #c6725880;
   outline-offset: 3px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px 10px 5px;
+}
+
+.c2 {
+  padding: 0 5px;
+  color: #696262;
 }
 
 .c4 {
@@ -125,6 +125,7 @@ exports[`Card component 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 5px;
+  padding: 0;
   max-height: 66px;
   overflow: hidden;
   list-style-type: none;

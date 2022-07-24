@@ -23,6 +23,7 @@ export const TagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  padding: 0;
 
   max-height: 66px;
   overflow: hidden;
