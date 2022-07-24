@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import { backgroundColor1, accentColor1 } from "src/stylesheets/Colors";
+import { accentColor1, backgroundColor1 } from "src/stylesheets/Colors";
 
 export const NavBarBase = styled.header`
   display: flex;
@@ -16,7 +16,7 @@ export const NavBarBase = styled.header`
   padding: 0 50px;
 `;
 
-export const RouterNavLink = styled(motion(NavLink))`
+const RouterNavLinkT = styled(NavLink)`
   position: relative;
 
   padding: 27px 40px;
@@ -31,6 +31,8 @@ export const RouterNavLink = styled(motion(NavLink))`
     font-family: "Roboto Regular", sans-serif;
   }
 `;
+
+export const RouterNavLink = motion(RouterNavLinkT);
 
 export const RouterActiveLink = styled(motion.div)`
   position: absolute;

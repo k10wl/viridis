@@ -18,7 +18,6 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      {/* @ts-expect-error: types mismatch https://github.com/styled-components/styled-components/issues/3738 */}
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <BrowserRouter>
