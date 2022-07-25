@@ -1,22 +1,30 @@
+import { rem } from "polished";
 import styled from "styled-components";
 
 import { textColor2, textColor3 } from "src/stylesheets/Colors";
 
-export const CardImage = styled.img.attrs({
+export const Figure = styled.figure`
+  margin: 0;
+`;
+
+export const Image = styled.img.attrs({
   "data-testid": "image",
 })`
-  height: 280px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 255px;
   width: 100%;
   object-fit: cover;
 `;
 
-export const CardName = styled.p`
-  padding: 10px 10px 10px;
+export const Figurecaption = styled.figcaption`
+  padding: 0 10px;
+  margin: 5px 0 0;
 
   color: ${textColor3};
 
   font-family: "PT Serif Bold", serif;
-  font-size: 1.125rem;
+  font-size: ${rem("20px")};
 
   display: block;
   white-space: nowrap;
@@ -24,8 +32,9 @@ export const CardName = styled.p`
   text-overflow: ellipsis;
 `;
 
-export const CardDescription = styled.p`
+export const FoodDescription = styled.p`
   padding: 0 10px;
+  margin: 7px 0 6px;
 
   color: ${textColor2};
 

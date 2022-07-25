@@ -6,11 +6,13 @@ import { primaryColor1 } from "src/stylesheets/Colors";
 export type ButtonBaseT = {
   height?: number;
   width?: number;
+  fullWidth?: boolean;
 };
 
 export const ButtonBase = styled(motion.button)<StyledProps<ButtonBaseT>>`
   min-width: ${({ width }): number => width || 150}px;
   height: ${({ height }): number => height || 30}px;
+  ${({ fullWidth }): string => (fullWidth ? "width: 100%" : "")};
 
   outline: none;
   border: none;

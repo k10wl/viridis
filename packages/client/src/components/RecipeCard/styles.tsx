@@ -1,29 +1,27 @@
 import { motion } from "framer-motion";
+import { rgba } from "polished";
 import styled from "styled-components";
 
-import { accentColor1, primaryColor1 } from "src/stylesheets/Colors";
+import { accentColor1 } from "src/stylesheets/Colors";
 
-export const CardBase = styled(motion.div).attrs({
+export const Base = styled(motion.div).attrs({
   tabIndex: 0,
 })`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  cursor: pointer;
-
-  overflow: hidden;
-
-  width: 340px;
-  height: 550px;
-
-  border: 2px solid ${accentColor1};
+  width: 300px;
+  max-width: 300px;
+  height: 445px;
+  max-height: 445px;
+  border: 1px solid black;
   border-radius: 7px;
+  overflow: hidden;
+  cursor: pointer;
+  background: ${rgba(accentColor1, 0)};
+  text-decoration: none;
+`;
 
-  margin: 20px;
-
-  &:focus-visible {
-    outline: 3px solid ${primaryColor1}80;
-    outline-offset: 3px;
-  }
+export const ButtonContainer = styled.div`
+  padding: 5px;
 `;

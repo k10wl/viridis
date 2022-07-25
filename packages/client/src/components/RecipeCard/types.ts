@@ -1,9 +1,3 @@
-export type CardProps = {
-  views: number;
-  favorite: boolean;
-  imageSrc: string;
-  name: string;
-  description: string;
-  ingredients: string[];
-  onClick: () => void;
-};
+import { RecipeBase } from "@viridis/shared/types";
+
+export type RecipeProps = Omit<RecipeBase, "cookingProcess">;

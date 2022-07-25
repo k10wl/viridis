@@ -23,11 +23,11 @@ const ResetStyles = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
   }
-  
+
   body {
     background-color: ${backgroundColor1};
   }
-  
+
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
@@ -59,6 +59,14 @@ const ResetStyles = createGlobalStyle`
 
   html {
     box-sizing: border-box;
+  }
+
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   *,

@@ -1,41 +1,31 @@
 import styled from "styled-components";
 
-import {
-  accentColor1,
-  backgroundColor1,
-  backgroundColor3,
-} from "src/stylesheets/Colors";
+import { accentColor1, backgroundColor1 } from "src/stylesheets/Colors";
 
-export const TagsContainer = styled.div`
+export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  height: 143px;
-
-  margin-top: auto;
-  padding: 10px 10px;
-
-  background-color: ${backgroundColor3};
-`;
-
-export const TagsList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 0;
-
-  max-height: 66px;
+  align-items: flex-end;
+  height: 100%;
   overflow: hidden;
-
-  list-style-type: none;
 `;
 
-export const CardTag = styled.li`
-  padding: 3px 10px;
+export const List = styled.ul`
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  margin: 0;
+  max-height: 45px;
+  list-style-position: inside;
+  overflow: hidden;
+`;
+
+export const Ingredient = styled.li`
+  padding: 3px 10px 3px 4px;
   border-radius: 4px;
   text-align: center;
-  flex-grow: 1;
 
   align-self: center;
 

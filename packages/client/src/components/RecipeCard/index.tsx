@@ -1,30 +1,42 @@
 import React, { FunctionComponent, useCallback } from "react";
 
-import { cardBaseTransition, cardBaseVariants } from "./animations";
-import { CardContent, CardHeader, IngredientsContainer } from "./components";
-import { CardBase } from "./styles";
-import { CardProps } from "./types";
+import { Button } from "src/components/Button";
 
-export const RecipeCard: FunctionComponent<CardProps> = ({
-  views,
-  favorite,
-  description,
-  imageSrc,
+import { cardBaseTransition, cardBaseVariants } from "./animations";
+import { Content, Ingredients } from "./components";
+import { Base, ButtonContainer } from "./styles";
+import { RecipeProps } from "./types";
+
+export const RecipeCard: FunctionComponent<RecipeProps> = ({
   name,
+  foodDescription,
+  imageUrl,
   ingredients,
-  onClick,
 }) => {
+  const onClick = useCallback(() => {
+    // @TODO: handle redirect and make it work with storybook
+  }, []);
+
+  const onButtonClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      // @TODO: handle redirect and make it work with storybook
+
+      e.stopPropagation();
+    },
+    []
+  );
+
   const onEnterClick = useCallback(
     (keyboardEvent: React.KeyboardEvent<HTMLDivElement>) => {
       if (keyboardEvent.key === "Enter") {
-        onClick();
+        // @TODO: handle redirect and make it work with storybook
       }
     },
     []
   );
 
   return (
-    <CardBase
+    <Base
       variants={cardBaseVariants}
       initial="rest"
       whileHover="hover"
@@ -34,15 +46,17 @@ export const RecipeCard: FunctionComponent<CardProps> = ({
       onKeyPress={onEnterClick}
       data-testid="card"
     >
-      <div>
-        <CardHeader views={views} favorite={favorite} />
-        <CardContent
-          imageSrc={imageSrc}
-          name={name}
-          description={description}
-        />
-      </div>
-      <IngredientsContainer ingredients={ingredients} />
-    </CardBase>
+      <Content
+        imageUrl={imageUrl}
+        name={name}
+        foodDescription={foodDescription}
+      />
+      <Ingredients ingredients={ingredients} />
+      <ButtonContainer>
+        <Button height={30} fullWidth onClick={onButtonClick}>
+          Open recipe in new page
+        </Button>
+      </ButtonContainer>
+    </Base>
   );
 };

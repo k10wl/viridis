@@ -15,6 +15,7 @@
     "server:dev": "yarn server dev",
     "client": "yarn workspace @viridis/client",
     "client:dev": "yarn client dev",
+    "client:storybook": "yarn client storybook",
     "shared": "yarn workspace @viridis/shared",
     "dev": "yarn client:dev & yarn server:dev",
     "eslint": "eslint"

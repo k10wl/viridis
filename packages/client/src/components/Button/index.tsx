@@ -9,6 +9,7 @@ type ButtonT = {
   type?: "button" | "submit";
   children: React.ReactNode;
   width?: number;
+  fullWidth?: boolean;
   height?: number;
 };
 
@@ -18,6 +19,7 @@ export const Button: React.FC<ButtonT> = ({
   type = "button",
   children,
   width,
+  fullWidth,
   height,
 }) => (
   <ButtonBase
@@ -35,6 +37,7 @@ export const Button: React.FC<ButtonT> = ({
     disabled={disabled}
     type={type}
     width={width}
+    fullWidth={fullWidth}
     height={height}
   >
     {children}

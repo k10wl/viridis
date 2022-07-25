@@ -15,25 +15,20 @@ const Template: ComponentStory<typeof RecipeCard> = (props) => (
 export const ThreeIngredients = Template.bind({});
 
 ThreeIngredients.args = {
-  views: 0,
-  favorite: false,
-  imageSrc:
+  imageUrl:
     "https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png",
   name: "Name of card",
-  description: "Recipe description",
+  foodDescription: "Recipe description",
   ingredients: ["Milk", "Cocoa", "Sugar"],
-  onClick: (): void => undefined,
 };
 
-export const IngredientsOveflow = Template.bind({});
+export const IngredientOverflow = Template.bind({});
 
-IngredientsOveflow.args = {
-  views: 0,
-  favorite: false,
-  imageSrc:
+IngredientOverflow.args = {
+  imageUrl:
     "https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png",
   name: "Name of card",
-  description: "Recipe description",
+  foodDescription: "Recipe description",
   ingredients: [
     "Egg",
     "Bread",
@@ -59,19 +54,42 @@ IngredientsOveflow.args = {
     "Cocoa",
     "Salt",
   ],
-  onClick: (): void => undefined,
 };
 
-export const LongDescriptionAndName = Template.bind({});
+export const LongProps = Template.bind({});
 
-LongDescriptionAndName.args = {
-  views: 0,
-  favorite: false,
-  imageSrc:
+LongProps.args = {
+  imageUrl:
     "https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png",
   name: "Recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name",
-  description:
+  foodDescription:
     "Recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description",
-  ingredients: ["Egg", "Bread", "Sugar", "Flour", "Chicken breast"],
-  onClick: (): void => undefined,
+  ingredients: [
+    "Egg",
+    "Bread",
+    "Sugar",
+    "Flour",
+    "Chicken breast",
+    "Egg",
+    "Bread",
+    "Sugar",
+    "Flour",
+    "Chicken breast",
+    "Egg",
+    "Bread",
+    "Sugar",
+    "Flour",
+    "Chicken breast",
+  ],
+};
+
+export const LongDescription = Template.bind({});
+
+LongDescription.args = {
+  imageUrl:
+    "https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png",
+  name: "Recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name",
+  foodDescription:
+    "Recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description",
+  ingredients: ["Egg", "Bread"],
 };

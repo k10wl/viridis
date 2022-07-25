@@ -9,9 +9,10 @@ type Miscellaneous = typeof CATEGORIES_TREE.miscellaneous.categoryId;
 type Snacks = typeof CATEGORIES_TREE.snacks.categoryId;
 type Sweets = typeof CATEGORIES_TREE.sweets.categoryId;
 
-interface RecipeBase {
+export interface RecipeBase {
   id: string;
   name: string;
+  imageUrl?: string;
   ingredients: Array<typeof INGREDIENTS[number]>;
   foodDescription: string;
   cookingProcess: string;
