@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router";
 
 import { Button } from "src/components/Button";
 
@@ -8,18 +9,28 @@ import { Base, ButtonContainer } from "./styles";
 import { RecipeProps } from "./types";
 
 export const RecipeCard: FunctionComponent<RecipeProps> = ({
+  id,
   name,
   foodDescription,
   imageUrl,
   ingredients,
 }) => {
-  const onClick = useCallback(() => {
-    // @TODO: handle redirect and make it work with storybook
+  const navigate = useNavigate();
+
+  const onClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    // On middle mouse click.
+    if (e.button === 1) {
+      window.open(`/${id}`, "_blank");
+
+      return;
+    }
+
+    navigate(`/${id}`);
   }, []);
 
   const onButtonClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
-      // @TODO: handle redirect and make it work with storybook
+      window.open(`/${id}`, "_blank");
 
       e.stopPropagation();
     },
@@ -29,7 +40,7 @@ export const RecipeCard: FunctionComponent<RecipeProps> = ({
   const onEnterClick = useCallback(
     (keyboardEvent: React.KeyboardEvent<HTMLDivElement>) => {
       if (keyboardEvent.key === "Enter") {
-        // @TODO: handle redirect and make it work with storybook
+        navigate(`/${id}`);
       }
     },
     []
@@ -53,7 +64,7 @@ export const RecipeCard: FunctionComponent<RecipeProps> = ({
       />
       <Ingredients ingredients={ingredients} />
       <ButtonContainer>
-        <Button height={30} fullWidth onClick={onButtonClick}>
+        <Button height="30px" width="100%" onClick={onButtonClick}>
           Open recipe in new page
         </Button>
       </ButtonContainer>

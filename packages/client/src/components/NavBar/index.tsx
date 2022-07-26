@@ -7,7 +7,7 @@ import { routes } from "src/router";
 import { NavBarSearch } from "./components";
 import { NavBarBase, RouterActiveLink, RouterNavLink } from "./styles";
 
-const NavBar: React.FC = () => {
+export const NavBar: React.FC = () => {
   const { pathname } = useLocation();
 
   return (
@@ -26,5 +26,3 @@ const NavBar: React.FC = () => {
     </NavBarBase>
   );
 };
-
-export default NavBar;

@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import NavBar from "./components/NavBar";
+import { NavBar } from "./components";
 import { useStyledUtils } from "./hooks";
 import { Router } from "./router";
 import store from "./store";

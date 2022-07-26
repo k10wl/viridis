@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button test 1`] = `
+exports[`Button disabled button should render correctly 1`] = `
 .c0 {
   min-width: 150px;
   height: 30px;
   outline: none;
   border: none;
   border-radius: 4px;
-  font-family: "Roboto",sans-serif;
   font-size: 1rem;
+  font-family: "Roboto",sans-serif;
 }
 
 .c0:hover {
@@ -22,8 +22,122 @@ exports[`Button test 1`] = `
 
 <button
   className="c0"
-  disabled={false}
-  onClick={[Function]}
+  disabled={true}
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0)",
+      "border": "#696262 solid 1px",
+      "color": "#696262",
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Button should be disabled and not clickable 1`] = `[MockFunction]`;
+
+exports[`Button should be enabled and clickable 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      SyntheticBaseEvent {
+        "_reactName": "onClick",
+        "_targetInst": null,
+        "altKey": false,
+        "bubbles": true,
+        "button": 0,
+        "buttons": 0,
+        "cancelable": true,
+        "clientX": 0,
+        "clientY": 0,
+        "ctrlKey": false,
+        "currentTarget": null,
+        "defaultPrevented": false,
+        "detail": 0,
+        "eventPhase": 3,
+        "getModifierState": [Function],
+        "isDefaultPrevented": [Function],
+        "isPropagationStopped": [Function],
+        "isTrusted": false,
+        "metaKey": false,
+        "movementX": 0,
+        "movementY": 0,
+        "nativeEvent": MouseEvent {
+          "isTrusted": false,
+        },
+        "pageX": undefined,
+        "pageY": undefined,
+        "relatedTarget": null,
+        "screenX": 0,
+        "screenY": 0,
+        "shiftKey": false,
+        "target": .c0 {
+  min-width: 150px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Roboto",sans-serif;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus-visible {
+  outline: 3px solid #c6725880;
+  outline-offset: 1px;
+}
+
+<button
+          class="c0"
+          style="color: rgb(251, 253, 253); background-color: rgb(198, 114, 88); border: 0px solid #c67258;"
+          type="button"
+        >
+          Button
+        </button>,
+        "timeStamp": 1658870802849,
+        "type": "click",
+        "view": null,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Button should render correctly 1`] = `
+.c0 {
+  min-width: 150px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Roboto",sans-serif;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus-visible {
+  outline: 3px solid #c6725880;
+  outline-offset: 1px;
+}
+
+<button
+  className="c0"
+  onClick={[MockFunction]}
   style={
     Object {
       "backgroundColor": "#c67258",
@@ -33,6 +147,6 @@ exports[`Button test 1`] = `
   }
   type="button"
 >
-  snapshot
+  Button
 </button>
 `;

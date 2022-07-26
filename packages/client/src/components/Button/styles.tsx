@@ -3,23 +3,16 @@ import styled, { StyledProps } from "styled-components";
 
 import { primaryColor1 } from "src/stylesheets/Colors";
 
-export type ButtonBaseT = {
-  height?: number;
-  width?: number;
-  fullWidth?: boolean;
-};
+import { ButtonProps, Size } from "./types";
 
-export const ButtonBase = styled(motion.button)<StyledProps<ButtonBaseT>>`
-  min-width: ${({ width }): number => width || 150}px;
-  height: ${({ height }): number => height || 30}px;
-  ${({ fullWidth }): string => (fullWidth ? "width: 100%" : "")};
-
+export const ButtonBase = styled(motion.button)<StyledProps<ButtonProps>>`
+  min-width: ${({ width }): Size => width || "150px"};
+  height: ${({ height }): Size => height || "30px"};
   outline: none;
   border: none;
-  border-radius: 4px;
-
+  border-radius: ${({ borderRadius }): Size => borderRadius || "4px"};
+  font-size: ${({ fontSize }): Size => fontSize || "1rem"};
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
 
   &:hover {
     cursor: pointer;

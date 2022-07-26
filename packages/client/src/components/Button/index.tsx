@@ -2,44 +2,25 @@ import React from "react";
 
 import { buttonTransition, buttonVariants } from "./animations";
 import { ButtonBase } from "./styles";
+import { ButtonProps } from "./types";
 
-type ButtonT = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
-  type?: "button" | "submit";
-  children: React.ReactNode;
-  width?: number;
-  fullWidth?: boolean;
-  height?: number;
-};
-
-export const Button: React.FC<ButtonT> = ({
+export const Button: React.FC<ButtonProps> = ({
   onClick,
-  disabled = false,
+  disabled,
   type = "button",
-  children,
-  width,
-  fullWidth,
-  height,
+  ...props
 }) => (
   <ButtonBase
     variants={buttonVariants}
-    initial="rest"
+    transition={buttonTransition}
+    initial={disabled ? "disabled" : "rest"}
     animate={disabled ? "disabled" : "rest"}
     whileHover={disabled ? "" : "hover"}
     whileTap={disabled ? "" : "tap"}
     whileFocus={disabled ? "" : "focus"}
-    transition={buttonTransition}
-    onClick={(clickEvent): void => {
-      clickEvent.stopPropagation();
-      onClick(clickEvent);
-    }}
+    onClick={onClick}
     disabled={disabled}
     type={type}
-    width={width}
-    fullWidth={fullWidth}
-    height={height}
-  >
-    {children}
-  </ButtonBase>
+    {...props}
+  />
 );

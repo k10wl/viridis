@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 
-import { RecipeCard } from "./index";
+import { RecipeCard } from "../index";
 
 export default {
   title: "RecipeCard",

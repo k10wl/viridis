@@ -7,12 +7,17 @@ export const Figure = styled.figure`
   margin: 0;
 `;
 
+export const ImageContainer = styled.div`
+  min-height: 255px;
+`;
+
 export const Image = styled.img.attrs({
   "data-testid": "image",
 })`
   flex-shrink: 0;
   flex-grow: 0;
   height: 255px;
+  min-height: 255px;
   width: 100%;
   object-fit: cover;
 `;
