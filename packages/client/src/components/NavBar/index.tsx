@@ -1,4 +1,3 @@
-import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import { useLocation } from "react-router";
 
@@ -12,16 +11,12 @@ export const NavBar: React.FC = () => {
 
   return (
     <NavBarBase>
-      <AnimateSharedLayout>
-        {routes.map((route) => (
-          <RouterNavLink key={route.path} to={route.path} layoutId={route.name}>
-            {route.name}
-            {pathname === route.path && (
-              <RouterActiveLink layoutId="underline" />
-            )}
-          </RouterNavLink>
-        ))}
-      </AnimateSharedLayout>
+      {routes.map((route) => (
+        <RouterNavLink key={route.path} to={route.path} layoutId={route.name}>
+          {route.name}
+          {pathname === route.path && <RouterActiveLink layoutId="underline" />}
+        </RouterNavLink>
+      ))}
       <NavBarSearch />
     </NavBarBase>
   );
