@@ -1,10 +1,10 @@
-import { Variants } from "framer-motion";
+import { Variants } from 'framer-motion';
 
 export const topTitleContainerVariants: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.0175,
-      ease: "linear",
+      ease: 'linear',
     },
   },
 };
@@ -39,7 +39,7 @@ export const andLetterVariants: Variants = {
     opacity: 1,
     scale: 1,
     x: 0,
-    transition: { delay: 0.45, type: "spring", bounce: 0.33 },
+    transition: { delay: 0.45, type: 'spring', bounce: 0.33 },
   },
 };
 
@@ -48,7 +48,7 @@ export const bottomTitleContainerVariants: Variants = {
     transition: {
       staggerChildren: 0.025,
       staggerDirection: -1,
-      ease: "linear",
+      ease: 'linear',
     },
   },
 };

@@ -1,26 +1,26 @@
-import React from "react";
-import { v4 } from "uuid";
+import React from 'react';
+import { v4 } from 'uuid';
 
-import { accentColor1, primaryColor1 } from "src/stylesheets/Colors";
+import { accentColor1, primaryColor1 } from 'src/stylesheets/Colors';
 
 import {
-  topTitleContainerVariants,
-  topTitleLetterVariants,
   andLetterVariants,
   bottomTitleContainerVariants,
   bottomTitleLetterVariants,
-} from "./animations";
+  topTitleContainerVariants,
+  topTitleLetterVariants,
+} from './animations';
 import {
-  Wrapper,
-  TitleLetterContainer,
   BottomTitleContainer,
   TitleLetter,
-} from "./styles";
+  TitleLetterContainer,
+  Wrapper,
+} from './styles';
 
 const Hero: React.FC = () => (
   <Wrapper initial="initial" animate="animate">
     <TitleLetterContainer variants={topTitleContainerVariants}>
-      {"Easy cooking steps".split("").map((letter) => (
+      {'Easy cooking steps'.split('').map(letter => (
         <TitleLetter
           key={v4()}
           color={primaryColor1}
@@ -35,7 +35,7 @@ const Hero: React.FC = () => (
         &
       </TitleLetter>
       <TitleLetterContainer variants={bottomTitleContainerVariants}>
-        {"Everyday recipes".split("").map((letter) => (
+        {'Everyday recipes'.split('').map(letter => (
           <TitleLetter
             key={v4()}
             color={accentColor1}

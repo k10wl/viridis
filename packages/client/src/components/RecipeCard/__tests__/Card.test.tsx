@@ -1,20 +1,20 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
-import reactRenderer from "react-test-renderer";
+import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
+import reactRenderer from 'react-test-renderer';
 
-import { RecipeCard } from "../index";
+import { RecipeCard } from '../index';
 
 const properties = {
   views: 3,
   favorite: false,
-  imageSrc: "Eheu, homo!",
-  name: "Orexis, orgia, et ausus.",
-  description: "Cur turpis observare?",
-  ingredients: ["Planeta", "Brodiums"],
+  imageSrc: 'Eheu, homo!',
+  name: 'Orexis, orgia, et ausus.',
+  description: 'Cur turpis observare?',
+  ingredients: ['Planeta', 'Brodiums'],
   onClick: jest.fn(),
 };
 
-test("RecipeCard component", () => {
+test('RecipeCard component', () => {
   const tree = reactRenderer
     .create(
       <RecipeCard
@@ -25,7 +25,7 @@ test("RecipeCard component", () => {
         description={properties.description}
         ingredients={properties.ingredients}
         onClick={properties.onClick}
-      />
+      />,
     )
     .toJSON();
 
@@ -40,25 +40,25 @@ test("RecipeCard component", () => {
       description={properties.description}
       ingredients={properties.ingredients}
       onClick={properties.onClick}
-    />
+    />,
   );
 
-  const cardNode = screen.getByTestId("card");
+  const cardNode = screen.getByTestId('card');
   const nameNode = screen.getByText(properties.name);
   const viewsNode = screen.getByText(properties.views);
-  const imageNode = screen.getByTestId("image");
-  const favoriteNode = screen.getByTestId("favorite-button");
+  const imageNode = screen.getByTestId('image');
+  const favoriteNode = screen.getByTestId('favorite-button');
   const descriptionNode = screen.getByText(properties.description);
 
   expect(cardNode).toBeInTheDocument();
   expect(nameNode).toBeInTheDocument();
   expect(viewsNode).toBeInTheDocument();
   expect(imageNode).toBeInTheDocument();
-  expect(imageNode).toHaveAttribute("src", properties.imageSrc);
+  expect(imageNode).toHaveAttribute('src', properties.imageSrc);
   expect(favoriteNode).toBeInTheDocument();
   expect(descriptionNode).toBeInTheDocument();
 
-  properties.ingredients.forEach((ingredient) => {
+  properties.ingredients.forEach(ingredient => {
     const ingredientNode = screen.getByText(ingredient);
 
     expect(ingredientNode).toBeInTheDocument();
@@ -68,6 +68,6 @@ test("RecipeCard component", () => {
   expect(properties.onClick).toHaveBeenCalledTimes(1);
   properties.onClick.mockReset();
 
-  fireEvent.keyPress(cardNode, { key: "Enter", code: "Enter", charCode: 13 });
+  fireEvent.keyPress(cardNode, { key: 'Enter', code: 'Enter', charCode: 13 });
   expect(properties.onClick).toHaveBeenCalledTimes(1);
 });

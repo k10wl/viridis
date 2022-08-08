@@ -1,2 +1,2 @@
-export * from "./CardContent";
-export * from "./IngredientsContainer";
+export * from './CardContent';
+export * from './IngredientsContainer';

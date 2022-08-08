@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import isValidProduct from "src/models/product/productJoi";
+import isValidProduct from 'src/models/product/productJoi';
 import {
   createNewProduct,
   deleteProduct,
@@ -8,8 +8,8 @@ import {
   getProductById,
   getProductsByQuery,
   patchProduct,
-} from "src/services/products";
-import { ProductType } from "src/types";
+} from 'src/services/products';
+import { ProductType } from 'src/types';
 
 export const getProducts = async (req: Request, res: Response) => {
   const products = await getAllProducts();
@@ -25,7 +25,7 @@ export const getOneProductById = async (req: Request, res: Response) => {
     if (!product) {
       return res
         .status(404)
-        .json({ message: "Product with given ID does not exist." });
+        .json({ message: 'Product with given ID does not exist.' });
     }
 
     return res.status(200).json(product);
@@ -43,9 +43,9 @@ export const getAllProductsByQuery = async (req: Request, res: Response) => {
     let tags = req.query.tags as string;
 
     if (!tags) {
-      tags = "";
+      tags = '';
     }
-    const queryTags = tags.trim() ? tags.split(",") : [];
+    const queryTags = tags.trim() ? tags.split(',') : [];
 
     const products = await getProductsByQuery({
       tags: queryTags,
@@ -55,14 +55,14 @@ export const getAllProductsByQuery = async (req: Request, res: Response) => {
     });
 
     if (products.length === 0) {
-      return res.status(404).json({ error: "No products were found." });
+      return res.status(404).json({ error: 'No products were found.' });
     }
 
     const filteredProducts = products.sort((a, b) => {
       let aMatches = 0;
       let bMatches = 0;
 
-      queryTags.forEach((tag) => {
+      queryTags.forEach(tag => {
         if (a.tags.includes(tag)) {
           aMatches += 1;
         }
@@ -86,15 +86,15 @@ export const getAllProductsByQuery = async (req: Request, res: Response) => {
 
 export const postProduct = async (
   req: Request<Record<string, never>, Record<string, never>, ProductType>,
-  res: Response
+  res: Response,
 ) => {
   try {
     const product = req.body;
 
-    const { error } = isValidProduct("POST", product);
+    const { error } = isValidProduct('POST', product);
 
     if (error) {
-      return res.status(400).json({ error: "Corrupted request.", ...error });
+      return res.status(400).json({ error: 'Corrupted request.', ...error });
     }
 
     const newProduct = await createNewProduct(product);
@@ -111,20 +111,20 @@ export const patchProductById = async (
     Record<string, never>,
     Partial<ProductType>
   >,
-  res: Response
+  res: Response,
 ) => {
   try {
     const { _id } = req.params;
     const requestedUpdate = req.body;
 
-    const { error } = isValidProduct("PATCH", requestedUpdate);
+    const { error } = isValidProduct('PATCH', requestedUpdate);
 
     if (error) {
-      return res.status(400).json({ error: "Corrupted request.", ...error });
+      return res.status(400).json({ error: 'Corrupted request.', ...error });
     }
 
     if (Object.keys(requestedUpdate).length === 0) {
-      return res.status(400).json({ error: "Empty request body." });
+      return res.status(400).json({ error: 'Empty request body.' });
     }
 
     const patchedProduct = await patchProduct(_id, requestedUpdate);

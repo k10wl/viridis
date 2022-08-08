@@ -4,10 +4,10 @@ import {
   Transition,
   useAnimation,
   Variants,
-} from "framer-motion";
-import React, { useCallback, useEffect } from "react";
+} from 'framer-motion';
+import React, { useCallback, useEffect } from 'react';
 
-import { backgroundColor1 } from "src/stylesheets/Colors";
+import { backgroundColor1 } from 'src/stylesheets/Colors';
 
 const baseRest: TargetAndTransition = {
   boxShadow: `0 0 0px 0px ${backgroundColor1}`,
@@ -17,19 +17,19 @@ const baseFocus: TargetAndTransition = {
 };
 
 const inputTransition: Transition = {
-  ease: "anticipate",
+  ease: 'anticipate',
 };
 
 const inputRest: TargetAndTransition = {
-  width: "0px",
+  width: '0px',
   opacity: 0,
-  padding: "0 0px",
+  padding: '0 0px',
   transition: inputTransition,
 };
 const inputFocus: TargetAndTransition = {
-  width: "200px",
+  width: '200px',
   opacity: 1,
-  padding: "0 15px",
+  padding: '0 15px',
   transition: inputTransition,
 };
 
@@ -101,7 +101,7 @@ export const useBoxAnimations: useBoxAnimationsT = ({
         animateInput.start(inputRest);
       }
     },
-    [searchBaseRef]
+    [animateBase, animateInput, searchBaseRef, setOpenSearch],
   );
 
   return {

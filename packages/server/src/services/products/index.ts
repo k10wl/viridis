@@ -1,11 +1,11 @@
-import Product from "src/models/product";
-import { ProductType } from "src/types";
+import Product from 'src/models/product';
+import { ProductType } from 'src/types';
 
 export const getAllProducts = async (): Promise<ProductType[]> =>
   Product.find();
 
 export const getProductById = async (
-  _id: string
+  _id: string,
 ): Promise<ProductType | null> => Product.findById(_id);
 
 export const getProductsByQuery = async ({
@@ -20,9 +20,9 @@ export const getProductsByQuery = async ({
   tags?: string[];
 }): Promise<ProductType[]> => {
   const query = {
-    category: category ? { $regex: new RegExp(category, "gi") } : /.*/,
-    subcategory: subcategory ? { $regex: new RegExp(subcategory, "gi") } : /.*/,
-    name: name ? { $regex: new RegExp(name, "gi") } : /.*/,
+    category: category ? { $regex: new RegExp(category, 'gi') } : /.*/,
+    subcategory: subcategory ? { $regex: new RegExp(subcategory, 'gi') } : /.*/,
+    name: name ? { $regex: new RegExp(name, 'gi') } : /.*/,
     tags: tags && tags.length > 0 ? { $in: tags } : /.*/,
   };
 
@@ -32,7 +32,7 @@ export const getProductsByQuery = async ({
 };
 
 export const createNewProduct = async (
-  product: ProductType
+  product: ProductType,
 ): Promise<ProductType> => {
   const doc = new Product(product);
 
@@ -43,7 +43,7 @@ export const createNewProduct = async (
 
 export const patchProduct = async (
   _id: string,
-  update: Partial<ProductType>
+  update: Partial<ProductType>,
 ): Promise<ProductType | null> =>
   Product.findByIdAndUpdate(_id, update, { new: true });
 

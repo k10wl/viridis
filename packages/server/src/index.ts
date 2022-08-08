@@ -1,7 +1,7 @@
-import express from "express";
+import express from 'express';
 
-import config from "src/config";
-import loaders from "src/loaders";
+import config from 'src/config';
+import loaders from 'src/loaders';
 
 const startServer: () => Promise<void> = async () => {
   try {
@@ -17,4 +17,4 @@ const startServer: () => Promise<void> = async () => {
   }
 };
 
-startServer().catch((error) => console.error(error));
+startServer().catch(error => console.error(error));

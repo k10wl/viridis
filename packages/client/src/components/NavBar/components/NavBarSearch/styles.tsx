@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
-import { ReactComponent as SearchSvg } from "src/static/icons/magnifying-glass-solid.svg";
+import { ReactComponent as SearchSvg } from 'src/static/icons/magnifying-glass-solid.svg';
 import {
   accentColor3,
   backgroundColor1,
   textColor1,
-} from "src/stylesheets/Colors";
+} from 'src/stylesheets/Colors';
 
 export const SearchBase = styled(motion.span).attrs({
-  "data-testid": "search-container",
+  'data-testid': 'search-container',
 })`
   display: flex;
   margin-left: auto;
@@ -42,9 +42,9 @@ export const SearchIcon = styled(motion(SearchSvg))`
 `;
 
 export const Input = styled(motion.input).attrs({
-  type: "search",
+  type: 'search',
   maxLength: 50,
-  placeholder: "What are we searching?",
+  placeholder: 'What are we searching?',
 })`
   width: 0;
   padding: 0;
@@ -55,7 +55,7 @@ export const Input = styled(motion.input).attrs({
   border: none;
   background-color: transparent;
 
-  font-family: "Roboto Regular", sans-serif;
+  font-family: 'Roboto Regular', sans-serif;
 
   &::placeholder {
     color: ${textColor1};

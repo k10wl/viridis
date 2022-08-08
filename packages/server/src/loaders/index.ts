@@ -1,7 +1,7 @@
-import { Application } from "express";
+import { Application } from 'express';
 
-import expressLoader from "./express";
-import mongooseLoader from "./mongoose";
+import expressLoader from './express';
+import mongooseLoader from './mongoose';
 
 const loadApp = async ({
   expressApp,
@@ -10,9 +10,9 @@ const loadApp = async ({
 }): Promise<void> => {
   try {
     await mongooseLoader();
-    console.log("MongoDB connection established successfully.");
+    console.log('MongoDB connection established successfully.');
     expressLoader({ expressApp });
-    console.log("Express connection established successfully.");
+    console.log('Express connection established successfully.');
   } catch (error) {
     console.error(error);
   }

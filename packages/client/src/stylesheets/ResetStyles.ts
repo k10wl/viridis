@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import { backgroundColor1 } from "./Colors";
+import { backgroundColor1 } from './Colors';
 
 const ResetStyles = createGlobalStyle`
   html, body, div, span, applet, object, iframe,

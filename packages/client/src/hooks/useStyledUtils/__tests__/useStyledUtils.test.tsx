@@ -1,6 +1,6 @@
-import { useStyledUtils } from "../index";
+import { useStyledUtils } from '../index';
 
-test("useStyledUtils", () => {
+test('useStyledUtils', () => {
   const utils = useStyledUtils();
 
   expect(utils.breakpoints).toBeDefined();

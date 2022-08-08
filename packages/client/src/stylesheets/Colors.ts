@@ -1,20 +1,20 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-export const backgroundColor1 = "#fbfdfd";
-export const backgroundColor2 = "#f1f4f4";
-export const backgroundColor3 = "#f2f3f5";
+export const backgroundColor1 = '#fbfdfd';
+export const backgroundColor2 = '#f1f4f4';
+export const backgroundColor3 = '#f2f3f5';
 
-export const textColor1 = "#bebab9";
-export const textColor2 = "#696262";
-export const textColor3 = "#121111";
+export const textColor1 = '#bebab9';
+export const textColor2 = '#696262';
+export const textColor3 = '#121111';
 
-export const primaryColor1 = "#c67258";
-export const primaryColor2 = "#bc684e";
-export const primaryColor3 = "#8d4f3a";
+export const primaryColor1 = '#c67258';
+export const primaryColor2 = '#bc684e';
+export const primaryColor3 = '#8d4f3a';
 
-export const accentColor1 = "#244e4b";
-export const accentColor2 = "#183634";
-export const accentColor3 = "#2f605d";
+export const accentColor1 = '#244e4b';
+export const accentColor2 = '#183634';
+export const accentColor3 = '#2f605d';
 
 const Colors = createGlobalStyle`
   :root {

@@ -1,15 +1,20 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es6": true,
+    "es2022": true,
+    "jest": true,
+    "node": true
   },
   "extends": [
+    "airbnb",
+    "airbnb/hooks",
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
     "plugin:import/recommended",
-    "airbnb",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -28,6 +33,9 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -35,7 +43,8 @@
     "import",
     "@typescript-eslint",
     "eslint-plugin-prettier",
-    "jest"
+    "jest",
+    "react"
   ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -44,6 +53,10 @@
     ],
     "@typescript-eslint/no-unused-vars": "error",
     "arrow-body-style": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
     "comma-dangle": "off",
     "import/extensions": [
       "error",
@@ -66,58 +79,77 @@
           "order": "asc"
         },
         "groups": [
-          "builtin",
-          "external",
-          "internal",
           [
-            "sibling",
-            "parent"
+            "builtin",
+            "external"
           ]
         ],
         "newlines-between": "always",
         "pathGroups": [
           {
             "group": "external",
-            "pattern": "(react|react-dom)",
-            "position": "before"
-          },
-          {
-            "group": "internal",
             "pattern": "@viridis/**",
-            "position": "before"
+            "position": "after"
           },
           {
-            "group": "internal",
-            "pattern": "src/**",
-            "position": "before"
-          },
-          {
-            "group": "parent",
-            "pattern": "@root/**",
-            "position": "before"
-          },
-          {
-            "group": "internal",
-            "pattern": "src/types/**",
+            "group": "external",
+            "pattern": "+(root|src)/**",
             "position": "after"
           }
         ],
-        "pathGroupsExcludedImportTypes": []
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ]
       }
     ],
     "import/prefer-default-export": "off",
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
     "newline-after-var": "error",
     "newline-before-return": "error",
+    "object-property-newline": "error",
     "no-console": "warn",
     "no-shadow": "off",
     "no-unused-vars": "off",
     "object-curly-newline": "off",
     "prefer-arrow-callback": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "avoid",
+        "endOfLine": "auto",
+        "printWidth": 80,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "all",
+        "useTabs": false
+      }
+    ],
     "quotes": [
       2,
-      "double"
-    ]
+      "single"
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".tsx",
+          ".ts"
+        ]
+      }
+    ],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off"
   },
   "settings": {
     "import/parsers": {

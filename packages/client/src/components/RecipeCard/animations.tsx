@@ -1,10 +1,10 @@
-import { Transition, Variants } from "framer-motion";
+import { Transition, Variants } from 'framer-motion';
 
 import {
   accentColor1,
   backgroundColor1,
   backgroundColor3,
-} from "src/stylesheets/Colors";
+} from 'src/stylesheets/Colors';
 
 export const cardBaseVariants: Variants = {
   rest: {
@@ -21,5 +21,5 @@ export const cardBaseVariants: Variants = {
 };
 
 export const cardBaseTransition: Transition = {
-  ease: "linear",
+  ease: 'linear',
 };

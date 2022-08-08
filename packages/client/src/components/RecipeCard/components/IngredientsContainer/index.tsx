@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from "react";
-import { v4 as uuid4 } from "uuid";
+import React, { FunctionComponent } from 'react';
+import { v4 as uuid4 } from 'uuid';
 
-import { RecipeProps } from "src/components/RecipeCard/types";
+import { RecipeProps } from 'src/components/RecipeCard/types';
 
-import { Container, Ingredient, List } from "./styles";
+import { Container, Ingredient, List } from './styles';
 
-type IngredientsContainerProps = Pick<RecipeProps, "ingredients">;
+type IngredientsContainerProps = Pick<RecipeProps, 'ingredients'>;
 
 export const Ingredients: FunctionComponent<IngredientsContainerProps> = ({
   ingredients,
@@ -13,7 +13,7 @@ export const Ingredients: FunctionComponent<IngredientsContainerProps> = ({
   return (
     <Container>
       <List>
-        {ingredients.map((ingredient) => (
+        {ingredients.map(ingredient => (
           <Ingredient key={uuid4()}>{ingredient}</Ingredient>
         ))}
       </List>

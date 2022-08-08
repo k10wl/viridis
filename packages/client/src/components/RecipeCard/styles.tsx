@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { rgba } from "polished";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import { rgba } from 'polished';
+import styled from 'styled-components';
 
-import { accentColor1 } from "src/stylesheets/Colors";
+import { accentColor1 } from 'src/stylesheets/Colors';
 
 export const Base = styled(motion.div).attrs({
   tabIndex: 0,

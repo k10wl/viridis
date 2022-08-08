@@ -1,24 +1,24 @@
-import bodyParser from "body-parser";
-import cookieParser from "cookie-parser";
-import cors, { CorsOptions } from "cors";
-import express, { Application } from "express";
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import cors, { CorsOptions } from 'cors';
+import express, { Application } from 'express';
 
-import routes from "src/api";
+import routes from 'src/api';
 
 const expressLoader = ({
   expressApp,
 }: {
   expressApp: Application;
 }): Application => {
-  expressApp.get("/status", (req, res) => {
+  expressApp.get('/status', (req, res) => {
     res.status(200).end();
   });
-  expressApp.head("/status", (req, res) => {
+  expressApp.head('/status', (req, res) => {
     res.status(200).end();
   });
-  expressApp.enable("trust proxy");
+  expressApp.enable('trust proxy');
 
-  const whitelist = ["http://localhost:3000", undefined];
+  const whitelist = ['http://localhost:3000', undefined];
   const corsOptions: Partial<CorsOptions> = {
     credentials: true,
     origin(origin, callback) {
@@ -26,7 +26,7 @@ const expressLoader = ({
         callback(null, true);
       } else {
         console.log(origin);
-        callback(new Error("Not allowed by CORS"));
+        callback(new Error('Not allowed by CORS'));
       }
     },
   };
@@ -36,7 +36,7 @@ const expressLoader = ({
   expressApp.use(bodyParser.urlencoded({ extended: false }));
   expressApp.use(cookieParser());
 
-  expressApp.use("/api", routes());
+  expressApp.use('/api', routes());
 
   return expressApp;
 };

@@ -1,39 +1,39 @@
 export enum Category {
-  coffee = "Coffee",
-  tea = "Tea",
-  snacks = "Chocolate, Fruits & Nuts",
-  accessories = "Accessories",
+  coffee = 'Coffee',
+  tea = 'Tea',
+  snacks = 'Chocolate, Fruits & Nuts',
+  accessories = 'Accessories',
 }
 
 export enum CoffeeCategories {
-  espresso = "Espresso",
-  latte = "Latte",
-  mocha = "Mocha",
-  americano = "Americano",
-  cappuccino = "Cappuccino",
-  breve = "Breve",
+  espresso = 'Espresso',
+  latte = 'Latte',
+  mocha = 'Mocha',
+  americano = 'Americano',
+  cappuccino = 'Cappuccino',
+  breve = 'Breve',
 }
 
 export enum TeaCategories {
-  black = "Black",
-  green = "Green",
-  dragon = "Dragon",
-  melon = "Melon",
-  jasmine = "Jasmine",
-  sweet = "Sweet",
+  black = 'Black',
+  green = 'Green',
+  dragon = 'Dragon',
+  melon = 'Melon',
+  jasmine = 'Jasmine',
+  sweet = 'Sweet',
 }
 
 export enum SnacksCategories {
-  chocolate = "Chocolate",
-  fruits = "Fruits",
-  nuts = "Nuts",
+  chocolate = 'Chocolate',
+  fruits = 'Fruits',
+  nuts = 'Nuts',
 }
 
 export enum AccessoriesCategories {
-  grinder = "Grinder",
-  cup = "Cup",
-  jar = "Jar",
-  coffeeMaker = "Coffee maker",
+  grinder = 'Grinder',
+  cup = 'Cup',
+  jar = 'Jar',
+  coffeeMaker = 'Coffee maker',
 }
 
 type CoffeeProduct = {

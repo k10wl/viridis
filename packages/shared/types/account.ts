@@ -1,7 +1,7 @@
 export enum PERMISSION_GROUP {
-  USER = "user",
-  ADMIN = "admin",
-  MAINTAINER = "maintainer",
+  USER = 'user',
+  ADMIN = 'admin',
+  MAINTAINER = 'maintainer',
 }
 
 export interface AccountT {

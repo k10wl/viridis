@@ -1,4 +1,4 @@
-import { CATEGORIES_TREE, INGREDIENTS } from "@root/constants";
+import { CATEGORIES_TREE, INGREDIENTS } from 'root/constants';
 
 type Categories = keyof typeof CATEGORIES_TREE;
 type Category<T extends Categories> = typeof CATEGORIES_TREE[T];
@@ -19,13 +19,13 @@ export interface RecipeBase {
 }
 
 interface RecipeClassificationBase<T extends Categories> {
-  category: Category<T>["categoryId"];
-  subcategory: keyof Category<T>["subcategories"];
+  category: Category<T>['categoryId'];
+  subcategory: keyof Category<T>['subcategories'];
 }
 
 type RecipeClassification<T extends Categories> =
-  keyof Category<T>["subcategories"] extends never
-    ? Omit<RecipeClassificationBase<T>, "subcategory">
+  keyof Category<T>['subcategories'] extends never
+    ? Omit<RecipeClassificationBase<T>, 'subcategory'>
     : RecipeClassificationBase<T>;
 
 type CategoryRecipe<T extends Categories> = RecipeBase &

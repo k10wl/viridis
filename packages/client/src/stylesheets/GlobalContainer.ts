@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { breakpoint } from "src/utils";
+import { breakpoint } from 'src/utils';
 
 const GlobalContainer = styled.div`
   max-width: 1550px;
   margin-right: auto;
   margin-left: auto;
 
-  ${breakpoint((b) => b.down("lg"))} {
+  ${breakpoint(b => b.down('lg'))} {
     max-width: 90vw;
   }
 `;

@@ -7,22 +7,22 @@ import {
   minWidthMedia,
   step,
   unit,
-} from "../index";
+} from '../index';
 
 const breakpoints = createBreakpoints();
 
-test("getValueByKey", () => {
+test('getValueByKey', () => {
   expect(getValueByKey(123)).toBe(123);
 
-  breakpointKeys.forEach((key) => {
+  breakpointKeys.forEach(key => {
     expect(getValueByKey(key)).toBe(breakpointValues[key]);
   });
 });
 
-test("minWidthMedia", () => {
-  breakpointKeys.forEach((key) => {
+test('minWidthMedia', () => {
+  breakpointKeys.forEach(key => {
     expect(minWidthMedia(breakpointValues[key])).toBe(
-      `(min-width: ${breakpointValues[key]}${unit})`
+      `(min-width: ${breakpointValues[key]}${unit})`,
     );
   });
 
@@ -31,10 +31,10 @@ test("minWidthMedia", () => {
   }
 });
 
-test("maxWidthMedia", () => {
-  breakpointKeys.forEach((key) => {
+test('maxWidthMedia', () => {
+  breakpointKeys.forEach(key => {
     expect(maxWidthMedia(breakpointValues[key])).toBe(
-      `(max-width: ${breakpointValues[key] - step / 100}${unit})`
+      `(max-width: ${breakpointValues[key] - step / 100}${unit})`,
     );
   });
 
@@ -43,12 +43,12 @@ test("maxWidthMedia", () => {
   }
 });
 
-test("createBreakpoints.up", () => {
-  breakpointKeys.forEach((key) => {
+test('createBreakpoints.up', () => {
+  breakpointKeys.forEach(key => {
     const value = getValueByKey(key);
 
     expect(breakpoints.up(breakpointValues[key])).toBe(
-      `@media ${minWidthMedia(value)}`
+      `@media ${minWidthMedia(value)}`,
     );
   });
 
@@ -59,12 +59,12 @@ test("createBreakpoints.up", () => {
   }
 });
 
-test("createBreakpoints.down", () => {
-  breakpointKeys.forEach((key) => {
+test('createBreakpoints.down', () => {
+  breakpointKeys.forEach(key => {
     const value = getValueByKey(key);
 
     expect(breakpoints.down(breakpointValues[key])).toBe(
-      `@media ${maxWidthMedia(value)}`
+      `@media ${maxWidthMedia(value)}`,
     );
   });
 
@@ -75,24 +75,24 @@ test("createBreakpoints.down", () => {
   }
 });
 
-test("createBreakpoints.between", () => {
+test('createBreakpoints.between', () => {
   breakpointKeys.forEach((key, index) => {
     for (let i = breakpointKeys.length; i > index; i -= 1) {
       const startValue = getValueByKey(key);
       const endValue = getValueByKey(breakpointKeys[i - 1]);
 
       expect(breakpoints.between(key, breakpointKeys[i - 1])).toBe(
-        `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`
+        `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`,
       );
     }
   });
 
-  breakpointKeys.forEach((key) => {
+  breakpointKeys.forEach(key => {
     const startValue = getValueByKey(key);
     const endValue = getValueByKey(2000);
 
     expect(breakpoints.between(key, 2000)).toBe(
-      `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`
+      `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`,
     );
   });
 
@@ -100,6 +100,6 @@ test("createBreakpoints.between", () => {
   const endValue = getValueByKey(2000);
 
   expect(breakpoints.between(20, 2000)).toBe(
-    `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`
+    `@media ${minWidthMedia(startValue)} and ${maxWidthMedia(endValue)}`,
   );
 });

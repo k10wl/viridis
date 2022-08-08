@@ -1,4 +1,4 @@
-import Joi, { ValidationResult } from "joi";
+import Joi, { ValidationResult } from 'joi';
 
 import {
   AccessoriesCategories,
@@ -7,45 +7,45 @@ import {
   ProductType,
   SnacksCategories,
   TeaCategories,
-} from "src/types";
+} from 'src/types';
 
-const requestProductJoi = (request: "POST" | "PATCH" | "PUT") => {
+const requestProductJoi = (request: 'POST' | 'PATCH' | 'PUT') => {
   let category = Joi.string().valid(
-    ...Object.values(Category).filter((k) => typeof k === "string")
+    ...Object.values(Category).filter(k => typeof k === 'string'),
   );
 
-  let subcategory = Joi.alternatives().when("category", {
+  let subcategory = Joi.alternatives().when('category', {
     switch: [
       {
         is: Category.coffee,
         then: Joi.any().valid(
           ...Object.values(CoffeeCategories).filter(
-            (string) => typeof string === "string"
-          )
+            string => typeof string === 'string',
+          ),
         ),
       },
       {
         is: Category.tea,
         then: Joi.any().valid(
           ...Object.values(TeaCategories).filter(
-            (string) => typeof string === "string"
-          )
+            string => typeof string === 'string',
+          ),
         ),
       },
       {
         is: Category.snacks,
         then: Joi.any().valid(
           ...Object.values(SnacksCategories).filter(
-            (string) => typeof string === "string"
-          )
+            string => typeof string === 'string',
+          ),
         ),
       },
       {
         is: Category.accessories,
         then: Joi.any().valid(
           ...Object.values(AccessoriesCategories).filter(
-            (string) => typeof string === "string"
-          )
+            string => typeof string === 'string',
+          ),
         ),
       },
     ],
@@ -57,7 +57,7 @@ const requestProductJoi = (request: "POST" | "PATCH" | "PUT") => {
 
   const description = Joi.string().max(5000).trim();
 
-  if (request === "POST" || request === "PUT") {
+  if (request === 'POST' || request === 'PUT') {
     category = category.required();
     subcategory = subcategory.required();
     name = name.required();
@@ -76,8 +76,8 @@ const requestProductJoi = (request: "POST" | "PATCH" | "PUT") => {
 };
 
 const isValidProduct = (
-  request: "POST" | "PATCH" | "PUT",
-  product: Partial<ProductType>
+  request: 'POST' | 'PATCH' | 'PUT',
+  product: Partial<ProductType>,
 ): ValidationResult => requestProductJoi(request).validate(product);
 
 export default isValidProduct;

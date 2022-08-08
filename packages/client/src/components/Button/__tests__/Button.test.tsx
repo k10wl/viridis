@@ -1,21 +1,21 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
-import reactRenderer from "react-test-renderer";
+import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
+import reactRenderer from 'react-test-renderer';
 
-import { Button } from "../index";
+import { Button } from '../index';
 
 const onClick = jest.fn();
 
-const BUTTON_NAME = "Button";
+const BUTTON_NAME = 'Button';
 
 function getButtonNode(): HTMLElement {
-  return screen.getByRole("button", {
+  return screen.getByRole('button', {
     name: BUTTON_NAME,
   });
 }
 
-describe("Button", () => {
-  test("should render correctly", () => {
+describe('Button', () => {
+  test('should render correctly', () => {
     const tree = reactRenderer
       .create(<Button onClick={onClick}>{BUTTON_NAME}</Button>)
       .toJSON();
@@ -23,19 +23,19 @@ describe("Button", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("disabled button should render correctly", () => {
+  test('disabled button should render correctly', () => {
     const tree = reactRenderer
       .create(
         <Button disabled onClick={onClick}>
           Button
-        </Button>
+        </Button>,
       )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  test("should be enabled and clickable", () => {
+  test('should be enabled and clickable', () => {
     render(<Button onClick={onClick}>{BUTTON_NAME}</Button>);
 
     expect(getButtonNode()).toBeEnabled();
@@ -45,11 +45,11 @@ describe("Button", () => {
     expect(onClick).toBeCalledTimes(1);
   });
 
-  test("should be disabled and not clickable", () => {
+  test('should be disabled and not clickable', () => {
     render(
       <Button onClick={onClick} disabled>
         {BUTTON_NAME}
-      </Button>
+      </Button>,
     );
 
     expect(getButtonNode()).toBeDisabled();

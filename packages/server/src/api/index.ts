@@ -1,6 +1,6 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-import productsApi from "./products";
+import productsApi from './products';
 
 const routes = () => {
   const app = Router();

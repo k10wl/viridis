@@ -1,1 +1,1 @@
-export * from "./useStyledUtils";
+export * from './useStyledUtils';

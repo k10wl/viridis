@@ -1,7 +1,7 @@
-import { rem } from "polished";
-import styled from "styled-components";
+import { rem } from 'polished';
+import styled from 'styled-components';
 
-import { textColor2, textColor3 } from "src/stylesheets/Colors";
+import { textColor2, textColor3 } from 'src/stylesheets/Colors';
 
 export const Figure = styled.figure`
   margin: 0;
@@ -12,7 +12,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img.attrs({
-  "data-testid": "image",
+  'data-testid': 'image',
 })`
   flex-shrink: 0;
   flex-grow: 0;
@@ -28,8 +28,8 @@ export const Figurecaption = styled.figcaption`
 
   color: ${textColor3};
 
-  font-family: "PT Serif Bold", serif;
-  font-size: ${rem("20px")};
+  font-family: 'PT Serif Bold', serif;
+  font-size: ${rem('20px')};
 
   display: block;
   white-space: nowrap;
@@ -43,7 +43,7 @@ export const FoodDescription = styled.p`
 
   color: ${textColor2};
 
-  font-family: "Roboto Thin", sans-serif;
+  font-family: 'Roboto Thin', sans-serif;
   font-size: 0.875rem;
 
   text-overflow: ellipsis;

@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import { primaryColor1 } from "./Colors";
+import { primaryColor1 } from './Colors';
 
 const focusBase = `
       position: absolute;

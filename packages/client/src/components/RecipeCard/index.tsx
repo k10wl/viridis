@@ -1,12 +1,12 @@
-import React, { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router";
+import React, { FunctionComponent, useCallback } from 'react';
+import { useNavigate } from 'react-router';
 
-import { Button } from "src/components/Button";
+import { Button } from 'src/components/Button';
 
-import { cardBaseTransition, cardBaseVariants } from "./animations";
-import { Content, Ingredients } from "./components";
-import { Base, ButtonContainer } from "./styles";
-import { RecipeProps } from "./types";
+import { cardBaseTransition, cardBaseVariants } from './animations';
+import { Content, Ingredients } from './components';
+import { Base, ButtonContainer } from './styles';
+import { RecipeProps } from './types';
 
 export const RecipeCard: FunctionComponent<RecipeProps> = ({
   id,
@@ -17,33 +17,36 @@ export const RecipeCard: FunctionComponent<RecipeProps> = ({
 }) => {
   const navigate = useNavigate();
 
-  const onClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    // On middle mouse click.
-    if (e.button === 1) {
-      window.open(`/${id}`, "_blank");
+  const onClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      // On middle mouse click.
+      if (e.button === 1) {
+        window.open(`/${id}`, '_blank');
 
-      return;
-    }
+        return;
+      }
 
-    navigate(`/${id}`);
-  }, []);
+      navigate(`/${id}`);
+    },
+    [id, navigate],
+  );
 
   const onButtonClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
-      window.open(`/${id}`, "_blank");
+      window.open(`/${id}`, '_blank');
 
       e.stopPropagation();
     },
-    []
+    [id],
   );
 
   const onEnterClick = useCallback(
     (keyboardEvent: React.KeyboardEvent<HTMLDivElement>) => {
-      if (keyboardEvent.key === "Enter") {
+      if (keyboardEvent.key === 'Enter') {
         navigate(`/${id}`);
       }
     },
-    []
+    [id, navigate],
   );
 
   return (

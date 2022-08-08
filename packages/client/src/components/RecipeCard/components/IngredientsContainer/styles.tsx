@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { accentColor1, backgroundColor1 } from "src/stylesheets/Colors";
+import { accentColor1, backgroundColor1 } from 'src/stylesheets/Colors';
 
 export const Container = styled.div`
   display: flex;
@@ -32,6 +32,6 @@ export const Ingredient = styled.li`
   color: ${backgroundColor1};
   background-color: ${accentColor1};
 
-  font-family: "Roboto Thin", sans-serif;
+  font-family: 'Roboto Thin', sans-serif;
   font-size: 0.75rem;
 `;

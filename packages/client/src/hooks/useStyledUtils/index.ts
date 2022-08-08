@@ -1,6 +1,6 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from 'styled-components';
 
-import { BreakpointsT, createBreakpoints } from "src/utils";
+import { BreakpointsT, createBreakpoints } from 'src/utils';
 
 interface UseStyledUtilsT extends DefaultTheme {
   breakpoints: BreakpointsT;

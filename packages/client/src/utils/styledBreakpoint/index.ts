@@ -1,6 +1,6 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from 'styled-components';
 
-import { BreakpointsT } from "../createBreakpoint";
+import { BreakpointsT } from '../createBreakpoint';
 
 type Query = (arg: BreakpointsT) => string;
 

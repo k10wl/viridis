@@ -1,4 +1,4 @@
-import { Transition, Variants } from "framer-motion";
+import { Transition, Variants } from 'framer-motion';
 
 import {
   backgroundColor1,
@@ -7,11 +7,11 @@ import {
   primaryColor3,
   textColor1,
   textColor2,
-} from "src/stylesheets/Colors";
+} from 'src/stylesheets/Colors';
 
 export const buttonVariants: Variants = {
   disabled: {
-    backgroundColor: "rgba(0,0,0,0)",
+    backgroundColor: 'rgba(0,0,0,0)',
     color: textColor2,
     border: `${textColor2} solid 1px`,
   },
