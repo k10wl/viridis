@@ -2,29 +2,47 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import reactRenderer from 'react-test-renderer';
 
+import { Ingredient } from '@viridis/shared/types';
+
 import { RecipeCard } from '../index';
 
-const properties = {
-  views: 3,
-  favorite: false,
-  imageSrc: 'Eheu, homo!',
+jest.mock('react-router', () => ({
+  useNavigate: (): (() => void) => jest.fn(),
+}));
+
+const INGREDIENTS: Ingredient[] = [
+  {
+    name: 'авокадо',
+    amount: {
+      type: 'teaspoon',
+      value: 'teaspoon',
+    },
+  },
+  {
+    name: 'манго',
+    amount: {
+      type: 'teaspoon',
+      value: 'teaspoon',
+    },
+  },
+];
+
+const PROPERTIES = {
+  picture: 'Eheu, homo!',
   name: 'Orexis, orgia, et ausus.',
   description: 'Cur turpis observare?',
-  ingredients: ['Planeta', 'Brodiums'],
-  onClick: jest.fn(),
+  ingredients: INGREDIENTS,
 };
 
 test('RecipeCard component', () => {
   const tree = reactRenderer
     .create(
       <RecipeCard
-        views={properties.views}
-        favorite={properties.favorite}
-        imageSrc={properties.imageSrc}
-        name={properties.name}
-        description={properties.description}
-        ingredients={properties.ingredients}
-        onClick={properties.onClick}
+        id="1"
+        picture={PROPERTIES.picture}
+        name={PROPERTIES.name}
+        description={PROPERTIES.description}
+        ingredients={PROPERTIES.ingredients}
       />,
     )
     .toJSON();
@@ -33,41 +51,34 @@ test('RecipeCard component', () => {
 
   render(
     <RecipeCard
-      views={properties.views}
-      favorite={properties.favorite}
-      imageSrc={properties.imageSrc}
-      name={properties.name}
-      description={properties.description}
-      ingredients={properties.ingredients}
-      onClick={properties.onClick}
+      id="1"
+      picture={PROPERTIES.picture}
+      name={PROPERTIES.name}
+      description={PROPERTIES.description}
+      ingredients={PROPERTIES.ingredients}
     />,
   );
 
   const cardNode = screen.getByTestId('card');
-  const nameNode = screen.getByText(properties.name);
-  const viewsNode = screen.getByText(properties.views);
+  const nameNode = screen.getByText(PROPERTIES.name);
   const imageNode = screen.getByTestId('image');
-  const favoriteNode = screen.getByTestId('favorite-button');
-  const descriptionNode = screen.getByText(properties.description);
+  const descriptionNode = screen.getByText(PROPERTIES.description);
 
   expect(cardNode).toBeInTheDocument();
   expect(nameNode).toBeInTheDocument();
-  expect(viewsNode).toBeInTheDocument();
   expect(imageNode).toBeInTheDocument();
-  expect(imageNode).toHaveAttribute('src', properties.imageSrc);
-  expect(favoriteNode).toBeInTheDocument();
+  expect(imageNode).toHaveAttribute('src', PROPERTIES.picture);
   expect(descriptionNode).toBeInTheDocument();
 
-  properties.ingredients.forEach(ingredient => {
-    const ingredientNode = screen.getByText(ingredient);
-
-    expect(ingredientNode).toBeInTheDocument();
+  PROPERTIES.ingredients.forEach(ingredient => {
+    expect(screen.queryByText(ingredient.name)).toBeInTheDocument();
   });
 
   fireEvent.click(cardNode);
-  expect(properties.onClick).toHaveBeenCalledTimes(1);
-  properties.onClick.mockReset();
 
-  fireEvent.keyPress(cardNode, { key: 'Enter', code: 'Enter', charCode: 13 });
-  expect(properties.onClick).toHaveBeenCalledTimes(1);
+  fireEvent.keyPress(cardNode, {
+    key: 'Enter',
+    code: 'Enter',
+    charCode: 13,
+  });
 });

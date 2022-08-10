@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
 
-import { accentColor1, primaryColor1 } from 'src/stylesheets/Colors';
+import { ACCENT_COLOR_1, PRIMARY_COLOR_1 } from 'src/stylesheets/Colors';
 
 import {
   andLetterVariants,
@@ -9,13 +9,13 @@ import {
   bottomTitleLetterVariants,
   topTitleContainerVariants,
   topTitleLetterVariants,
-} from './animations';
+} from './animation';
 import {
   BottomTitleContainer,
   TitleLetter,
   TitleLetterContainer,
   Wrapper,
-} from './styles';
+} from './style';
 
 const Hero: React.FC = () => (
   <Wrapper initial="initial" animate="animate">
@@ -23,7 +23,7 @@ const Hero: React.FC = () => (
       {'Easy cooking steps'.split('').map(letter => (
         <TitleLetter
           key={v4()}
-          color={primaryColor1}
+          color={PRIMARY_COLOR_1}
           variants={topTitleLetterVariants}
         >
           {letter}
@@ -31,14 +31,14 @@ const Hero: React.FC = () => (
       ))}
     </TitleLetterContainer>
     <BottomTitleContainer>
-      <TitleLetter variants={andLetterVariants} color={accentColor1}>
+      <TitleLetter variants={andLetterVariants} color={ACCENT_COLOR_1}>
         &
       </TitleLetter>
       <TitleLetterContainer variants={bottomTitleContainerVariants}>
         {'Everyday recipes'.split('').map(letter => (
           <TitleLetter
             key={v4()}
-            color={accentColor1}
+            color={ACCENT_COLOR_1}
             variants={bottomTitleLetterVariants}
           >
             {letter}

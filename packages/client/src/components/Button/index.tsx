@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { buttonTransition, buttonVariants } from './animations';
-import { ButtonBase } from './styles';
-import { ButtonProps } from './types';
+import { buttonTransition, buttonVariants } from './animation';
+import { ButtonBase } from './style';
+import { ButtonProps } from './type';
 
 export const Button: React.FC<ButtonProps> = ({
   onClick,

@@ -1,10 +1,10 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
 
-import { primaryColor1, textColor1 } from 'src/stylesheets/Colors';
+import { PRIMARY_COLOR_1, TEXT_COLOR_1 } from 'src/stylesheets/Colors';
 
-import { FavoriteButtonTransition, FavoriteButtonVariants } from './animations';
-import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from './styles';
+import { FavoriteButtonTransition, FavoriteButtonVariants } from './animation';
+import { FavoriteButtonBase, HeartRegularSVG, HeartSolidSVG } from './style';
 
 export type FavoriteButtonT = {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -34,7 +34,7 @@ export const FavoriteButton: React.FC<FavoriteButtonT> = ({
             animate="animate"
             exit="exit"
             whileHover="hover"
-            fill={primaryColor1}
+            fill={PRIMARY_COLOR_1}
             variants={FavoriteButtonVariants}
             transition={FavoriteButtonTransition}
             data-testid="favorite-icon"
@@ -47,7 +47,7 @@ export const FavoriteButton: React.FC<FavoriteButtonT> = ({
             animate="animate"
             exit="exit"
             whileHover="hover"
-            fill={textColor1}
+            fill={TEXT_COLOR_1}
             variants={FavoriteButtonVariants}
             transition={FavoriteButtonTransition}
             data-testid="regular-icon"

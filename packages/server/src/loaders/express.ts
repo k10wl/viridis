@@ -4,12 +4,13 @@ import cors, { CorsOptions } from 'cors';
 import express, { Application } from 'express';
 
 import routes from 'src/api';
+import { debugLog } from 'src/utils';
 
-const expressLoader = ({
-  expressApp,
-}: {
+interface Arguments {
   expressApp: Application;
-}): Application => {
+}
+
+export function expressLoader({ expressApp }: Arguments): Application {
   expressApp.get('/status', (req, res) => {
     res.status(200).end();
   });
@@ -25,7 +26,7 @@ const expressLoader = ({
       if (whitelist.indexOf(origin as string) !== -1) {
         callback(null, true);
       } else {
-        console.log(origin);
+        debugLog(origin);
         callback(new Error('Not allowed by CORS'));
       }
     },
@@ -39,6 +40,4 @@ const expressLoader = ({
   expressApp.use('/api', routes());
 
   return expressApp;
-};
-
-export default expressLoader;
+}

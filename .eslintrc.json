@@ -18,26 +18,14 @@
     "prettier",
     "plugin:prettier/recommended"
   ],
-  "overrides": [
-    {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": [
-          "warn"
-        ]
-      }
-    }
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./packages/**/tsconfig.json"
   },
   "plugins": [
     "import",
@@ -47,17 +35,75 @@
     "react"
   ],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": [
+          "UPPER_CASE"
+        ],
+        "modifiers": [
+          "const",
+          "global"
+        ],
+        "types": [
+          "string",
+          "number",
+          "boolean",
+          "array"
+        ],
+        "selector": [
+          "variable"
+        ]
+      },
+      {
+        "format": [
+          "PascalCase",
+          "camelCase"
+        ],
+        "modifiers": [
+          "const",
+          "global"
+        ],
+        "types": [
+          "function"
+        ],
+        "selector": [
+          "variable"
+        ]
+      },
+      {
+        "selector": [
+          "typeLike",
+          "interface"
+        ],
+        "format": [
+          "PascalCase"
+        ]
+      }
+    ],
     "@typescript-eslint/no-shadow": [
       "error"
     ],
+    "@typescript-eslint/no-unused-expressions": "error",
     "@typescript-eslint/no-unused-vars": "error",
-    "arrow-body-style": "off",
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
     "arrow-parens": [
       "error",
       "as-needed"
     ],
     "comma-dangle": "off",
+    "func-style": [
+      "error",
+      "declaration",
+      {
+        "allowArrowFunctions": true
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -109,11 +155,12 @@
     ],
     "newline-after-var": "error",
     "newline-before-return": "error",
-    "object-property-newline": "error",
     "no-console": "warn",
     "no-shadow": "off",
+    "no-unused-expressions": "off",
     "no-unused-vars": "off",
     "object-curly-newline": "off",
+    "object-property-newline": "error",
     "prefer-arrow-callback": "off",
     "prettier/prettier": [
       "error",

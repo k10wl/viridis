@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { magnifyingGlassVariants, useBoxAnimations } from './animations';
-import { Input, SearchBase, SearchButton, SearchIcon } from './styles';
+import { magnifyingGlassVariants, useBoxAnimations } from './animation';
+import { Input, SearchBase, SearchButton, SearchIcon } from './style';
 
 export const NavBarSearch: React.FC = () => {
   const [openSearch, setOpenSearch] = useState(false);
@@ -19,7 +19,7 @@ export const NavBarSearch: React.FC = () => {
 
   const handleSearchClick = useCallback(() => {
     if (openSearch && searchInput.trim()) {
-      console.log(searchInput); // TODO: replace log with function
+      // TODO: create search function
     }
     if (!openSearch) {
       setOpenSearch(true);

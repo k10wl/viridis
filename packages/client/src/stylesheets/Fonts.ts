@@ -17,7 +17,7 @@ import RobotoRegular from 'src/static/typography/Roboto/Roboto-Regular.ttf';
 import RobotoThin from 'src/static/typography/Roboto/Roboto-Thin.ttf';
 import RobotoThinItalic from 'src/static/typography/Roboto/Roboto-ThinItalic.ttf';
 
-const Fonts = createGlobalStyle`
+export const Fonts = createGlobalStyle`
   @font-face {
     font-family: "Roboto Black";
     src: url(${RobotoBlack});
@@ -98,5 +98,3 @@ const Fonts = createGlobalStyle`
     src: url(${PTSerifBoldItalic});
   }
 `;
-
-export default Fonts;

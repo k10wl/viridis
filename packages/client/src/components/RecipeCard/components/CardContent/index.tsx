@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-import { RecipeProps } from 'src/components/RecipeCard/types';
+import { RecipeProps } from 'src/components/RecipeCard/type';
 
 import {
   Figure,
@@ -8,20 +8,21 @@ import {
   FoodDescription,
   Image,
   ImageContainer,
-} from './styles';
+} from './style';
 
-type CardContentT = Pick<RecipeProps, 'imageUrl' | 'name' | 'foodDescription'>;
+type Props = Pick<RecipeProps, 'picture' | 'name' | 'description'>;
 
-export const Content: React.FC<CardContentT> = ({
+export const Content = ({
   name,
-  imageUrl,
-  foodDescription,
-}) => (
+  picture,
+  description,
+}: Props): ReactElement => (
   <Figure>
     <ImageContainer>
-      <Image src={imageUrl} alt={name} />
+      <Image src={picture} alt={name} />
     </ImageContainer>
+
     <Figurecaption>{name}</Figurecaption>
-    <FoodDescription>{foodDescription}</FoodDescription>
+    <FoodDescription>{description}</FoodDescription>
   </Figure>
 );

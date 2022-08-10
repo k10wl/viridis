@@ -5,9 +5,17 @@ import { Catalog, Homepage } from 'src/pages';
 
 type RouteT = RouteObject & { name: string; path: string };
 
-export const routes: RouteT[] = [
-  { path: '/', name: 'Homepage', element: <Homepage /> },
-  { path: '/catalog', name: 'Catalog', element: <Catalog /> },
+export const ROUTES: RouteT[] = [
+  {
+    path: '/',
+    name: 'Homepage',
+    element: <Homepage />,
+  },
+  {
+    path: '/catalog',
+    name: 'Catalog',
+    element: <Catalog />,
+  },
 ];
 
-export const Router: React.FC = () => useRoutes(routes);
+export const Router: React.FC = () => useRoutes(ROUTES);

@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { backgroundColor1 } from './Colors';
+import { BACKGROUND_COLOR_1 } from './Colors';
 
-const ResetStyles = createGlobalStyle`
+export const ResetStyles = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -25,7 +25,7 @@ const ResetStyles = createGlobalStyle`
   }
 
   body {
-    background-color: ${backgroundColor1};
+    background-color: ${BACKGROUND_COLOR_1};
   }
 
   /* HTML5 display-role reset for older browsers */
@@ -75,5 +75,3 @@ const ResetStyles = createGlobalStyle`
     box-sizing: inherit;
   }
 `;
-
-export default ResetStyles;

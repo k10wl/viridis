@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { routes } from 'src/router';
+import { ROUTES } from 'src/router';
 
 import { NavBar } from '../index';
 
@@ -13,7 +13,7 @@ test('NavBar', () => {
     </BrowserRouter>,
   );
 
-  routes.forEach(route => {
+  ROUTES.forEach(route => {
     const routeNode = screen.getByRole('link', { name: route.name });
 
     expect(routeNode).toBeInTheDocument();

@@ -1,13 +1,9 @@
 import { Router } from 'express';
 
-import productsApi from './products';
-
-const routes = () => {
+function routes(): Router {
   const app = Router();
 
-  productsApi(app);
-
   return app;
-};
+}
 
 export default routes;

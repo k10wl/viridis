@@ -115,5 +115,6 @@ export const CATEGORIES_TREE = {
   },
 } as const;
 
-export const SUBCATEGORIES_ID_ARRAY = getKeys(SUBCATEGORIES);
 export const CATEGORIES_ID_ARRAY = getKeys(CATEGORIES_TREE);
+
+export const SUBCATEGORIES_ID_ARRAY = getKeys(SUBCATEGORIES);

@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router';
 
 import { Button } from 'src/components/Button';
 
-import { cardBaseTransition, cardBaseVariants } from './animations';
+import { cardBaseTransition, cardBaseVariants } from './animation';
 import { Content, Ingredients } from './components';
-import { Base, ButtonContainer } from './styles';
-import { RecipeProps } from './types';
+import { Base, ButtonContainer } from './style';
+import { RecipeProps } from './type';
 
 export const RecipeCard: FunctionComponent<RecipeProps> = ({
   id,
   name,
-  foodDescription,
-  imageUrl,
+  description,
+  picture,
   ingredients,
 }) => {
   const navigate = useNavigate();
@@ -60,11 +60,7 @@ export const RecipeCard: FunctionComponent<RecipeProps> = ({
       onKeyPress={onEnterClick}
       data-testid="card"
     >
-      <Content
-        imageUrl={imageUrl}
-        name={name}
-        foodDescription={foodDescription}
-      />
+      <Content picture={picture} name={name} description={description} />
       <Ingredients ingredients={ingredients} />
       <ButtonContainer>
         <Button height="30px" width="100%" onClick={onButtonClick}>

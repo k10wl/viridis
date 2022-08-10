@@ -11,13 +11,25 @@
     ]
   },
   "scripts": {
-    "server": "yarn workspace @viridis/server",
-    "server:dev": "yarn server dev",
     "client": "yarn workspace @viridis/client",
-    "client:dev": "yarn client dev",
-    "client:storybook": "yarn client storybook",
+    "server": "yarn workspace @viridis/server",
     "shared": "yarn workspace @viridis/shared",
-    "dev": "yarn client:dev & yarn server:dev",
-    "eslint": "eslint"
+    "client:test": "yarn client test",
+    "server:test": "yarn server test",
+    "dev": "pm2 start ecosystem.config.js",
+    "dev:update-config": "yarn dev:stop && pm2 delete ecosystem.config.js",
+    "dev:stop": "pm2 stop all",
+    "dev:restart": "pm2 restart all",
+    "dev:monitor": "pm2 monit",
+    "dev:client": "yarn dev --only 'client'",
+    "dev:server": "yarn dev --only 'server'",
+    "dev:storybook": "yarn dev --only 'storybook'",
+    "eslint": "eslint",
+    "eslint:fix": "eslint . --fix",
+    "test": "yarn client:test && yarn server:test",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1"
   }
 }

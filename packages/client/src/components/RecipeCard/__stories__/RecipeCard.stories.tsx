@@ -15,81 +15,199 @@ const Template: ComponentStory<typeof RecipeCard> = props => (
 export const ThreeIngredients = Template.bind({});
 
 ThreeIngredients.args = {
-  imageUrl:
+  picture:
     'https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png',
   name: 'Name of card',
-  foodDescription: 'Recipe description',
-  ingredients: ['Milk', 'Cocoa', 'Sugar'],
+  description: 'Recipe description',
+  ingredients: [
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+  ],
 };
 
 export const IngredientOverflow = Template.bind({});
 
 IngredientOverflow.args = {
-  imageUrl:
+  picture:
     'https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png',
   name: 'Name of card',
-  foodDescription: 'Recipe description',
+  description: 'Recipe description',
   ingredients: [
-    'Egg',
-    'Bread',
-    'Sugar',
-    'Flour',
-    'Rehydrated water',
-    'Bacon',
-    'Poultry',
-    'Turkey legs',
-    'Chicken breast',
-    'Mango',
-    'Cheese',
-    'Mozzarella',
-    'Gorgonzola',
-    'Some rare blue cheese name',
-    'Soy beans',
-    'Honey',
-    'Mush',
-    'Bananas',
-    'Garlic',
-    'Onion',
-    'Milk',
-    'Cocoa',
-    'Salt',
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
   ],
 };
 
 export const LongProps = Template.bind({});
 
 LongProps.args = {
-  imageUrl:
+  picture:
     'https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png',
   name: 'Recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name',
-  foodDescription:
+  description:
     'Recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description',
   ingredients: [
-    'Egg',
-    'Bread',
-    'Sugar',
-    'Flour',
-    'Chicken breast',
-    'Egg',
-    'Bread',
-    'Sugar',
-    'Flour',
-    'Chicken breast',
-    'Egg',
-    'Bread',
-    'Sugar',
-    'Flour',
-    'Chicken breast',
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
   ],
 };
 
 export const LongDescription = Template.bind({});
 
 LongDescription.args = {
-  imageUrl:
+  picture:
     'https://welcome.setantasports.com/wp-content/uploads/2022/03/placeholder.png',
   name: 'Recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name recipe name',
-  foodDescription:
+  description:
     'Recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description recipe description',
-  ingredients: ['Egg', 'Bread'],
+  ingredients: [
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+    {
+      name: 'Milk',
+      amount: {
+        value: '1',
+        type: '1',
+      },
+    },
+  ],
 };
