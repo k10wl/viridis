@@ -1,24 +1,18 @@
-import React, { FunctionComponent } from "react";
-import { v4 as uuid4 } from "uuid";
+import React, { FunctionComponent } from 'react';
+import { v4 as uuid4 } from 'uuid';
 
-import { Button } from "src/components/Button";
-import { CardProps } from "src/components/RecipeCard/types";
+import { RecipeProps } from 'src/components/RecipeCard/type';
 
-import { CardTag, TagsContainer, TagsList } from "./styles";
+import { Container, Ingredient, List } from './style';
 
-type IngredientsContainerProps = Pick<CardProps, "ingredients">;
+type Props = Pick<RecipeProps, 'ingredients'>;
 
-export const IngredientsContainer: FunctionComponent<
-  IngredientsContainerProps
-> = ({ ingredients }) => (
-  <TagsContainer>
-    <TagsList>
-      {ingredients.map((ingredient) => (
-        <CardTag key={uuid4()}>{ingredient}</CardTag>
+export const Ingredients: FunctionComponent<Props> = ({ ingredients }) => (
+  <Container>
+    <List>
+      {ingredients.map(ingredient => (
+        <Ingredient key={uuid4()}>{ingredient.name}</Ingredient>
       ))}
-    </TagsList>
-    <Button height={50} onClick={(): void => undefined}>
-      Open recipe in new page
-    </Button>
-  </TagsContainer>
+    </List>
+  </Container>
 );

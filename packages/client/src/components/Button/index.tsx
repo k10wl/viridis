@@ -1,42 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import { buttonTransition, buttonVariants } from "./animations";
-import { ButtonBase } from "./styles";
+import { buttonTransition, buttonVariants } from './animation';
+import { ButtonBase } from './style';
+import { ButtonProps } from './type';
 
-type ButtonT = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
-  type?: "button" | "submit";
-  children: React.ReactNode;
-  width?: number;
-  height?: number;
-};
-
-export const Button: React.FC<ButtonT> = ({
+export const Button: React.FC<ButtonProps> = ({
   onClick,
-  disabled = false,
-  type = "button",
-  children,
-  width,
-  height,
+  disabled,
+  type = 'button',
+  ...props
 }) => (
   <ButtonBase
     variants={buttonVariants}
-    initial="rest"
-    animate={disabled ? "disabled" : "rest"}
-    whileHover={disabled ? "" : "hover"}
-    whileTap={disabled ? "" : "tap"}
-    whileFocus={disabled ? "" : "focus"}
     transition={buttonTransition}
-    onClick={(clickEvent): void => {
-      clickEvent.stopPropagation();
-      onClick(clickEvent);
-    }}
+    initial={disabled ? 'disabled' : 'rest'}
+    animate={disabled ? 'disabled' : 'rest'}
+    whileHover={disabled ? '' : 'hover'}
+    whileTap={disabled ? '' : 'tap'}
+    whileFocus={disabled ? '' : 'focus'}
+    onClick={onClick}
     disabled={disabled}
     type={type}
-    width={width}
-    height={height}
-  >
-    {children}
-  </ButtonBase>
+    {...props}
+  />
 );

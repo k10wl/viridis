@@ -1,41 +1,61 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
-import reactRenderer from "react-test-renderer";
+import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
+import reactRenderer from 'react-test-renderer';
 
-import { Button } from "../index";
+import { Button } from '../index';
 
 const onClick = jest.fn();
 
-test("Button test", () => {
-  const tree = reactRenderer
-    .create(<Button onClick={onClick}>snapshot</Button>)
-    .toJSON();
+const BUTTON_NAME = 'Button';
 
-  expect(tree).toMatchSnapshot();
+function getButtonNode(): HTMLElement {
+  return screen.getByRole('button', {
+    name: BUTTON_NAME,
+  });
+}
 
-  const { rerender } = render(<Button onClick={onClick}>button text</Button>);
+describe('Button', () => {
+  test('should render correctly', () => {
+    const tree = reactRenderer
+      .create(<Button onClick={onClick}>{BUTTON_NAME}</Button>)
+      .toJSON();
 
-  const buttonNode = screen.getByText(/button text/);
+    expect(tree).toMatchSnapshot();
+  });
 
-  expect(buttonNode).toBeInTheDocument();
-  expect(buttonNode).toBeEnabled();
+  test('disabled button should render correctly', () => {
+    const tree = reactRenderer
+      .create(
+        <Button disabled onClick={onClick}>
+          Button
+        </Button>,
+      )
+      .toJSON();
 
-  fireEvent.click(buttonNode);
-  expect(onClick).toBeCalledTimes(1);
+    expect(tree).toMatchSnapshot();
+  });
 
-  rerender(
-    <Button onClick={onClick} disabled>
-      disabled button
-    </Button>
-  );
+  test('should be enabled and clickable', () => {
+    render(<Button onClick={onClick}>{BUTTON_NAME}</Button>);
 
-  onClick.mockReset();
+    expect(getButtonNode()).toBeEnabled();
 
-  const disabledButtonNode = screen.getByText(/disabled button/);
+    fireEvent.click(getButtonNode());
 
-  expect(disabledButtonNode).toBeInTheDocument();
-  expect(disabledButtonNode).toBeDisabled();
+    expect(onClick).toBeCalledTimes(1);
+  });
 
-  fireEvent.click(disabledButtonNode);
-  expect(onClick).not.toBeCalled();
+  test('should be disabled and not clickable', () => {
+    render(
+      <Button onClick={onClick} disabled>
+        {BUTTON_NAME}
+      </Button>,
+    );
+
+    expect(getButtonNode()).toBeDisabled();
+
+    fireEvent.click(getButtonNode());
+
+    expect(onClick).not.toBeCalled();
+  });
 });

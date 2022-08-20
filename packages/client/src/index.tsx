@@ -1,16 +1,16 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-const container = document.getElementById("root");
-const root = createRoot(container as HTMLElement);
+const CONTAINER = document.getElementById('root');
+const ROOT = createRoot(CONTAINER as HTMLElement);
 
-root.render(
+ROOT.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want your app to work offline and load faster, you can change

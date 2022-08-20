@@ -1,13 +1,14 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-import config from "src/config";
+import { CONFIG } from 'src/config';
+import { debugLog } from 'src/utils';
 
-const mongooseLoader = async () => {
+export async function mongooseLoader(): Promise<void> {
   try {
-    await mongoose.connect(config.MONGO_DATABASE_CONNECTION as string);
+    await mongoose.connect(CONFIG.MONGO_DATABASE_CONNECTION as string, {
+      dbName: CONFIG.MONGO_DATABASE_NAME,
+    });
   } catch (error) {
-    console.error("Error while establishing connection to MongoDB", error);
+    debugLog('Error while establishing connection to MongoDB', error);
   }
-};
-
-export default mongooseLoader;
+}

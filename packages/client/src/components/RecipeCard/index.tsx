@@ -1,30 +1,56 @@
-import React, { FunctionComponent, useCallback } from "react";
+import React, { FunctionComponent, useCallback } from 'react';
+import { useNavigate } from 'react-router';
 
-import { cardBaseTransition, cardBaseVariants } from "./animations";
-import { CardContent, CardHeader, IngredientsContainer } from "./components";
-import { CardBase } from "./styles";
-import { CardProps } from "./types";
+import { Button } from 'src/components/Button';
 
-export const RecipeCard: FunctionComponent<CardProps> = ({
-  views,
-  favorite,
-  description,
-  imageSrc,
+import { cardBaseTransition, cardBaseVariants } from './animation';
+import { Content, Ingredients } from './components';
+import { Base, ButtonContainer } from './style';
+import { RecipeProps } from './type';
+
+export const RecipeCard: FunctionComponent<RecipeProps> = ({
+  id,
   name,
+  description,
+  picture,
   ingredients,
-  onClick,
 }) => {
+  const navigate = useNavigate();
+
+  const onClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      // On middle mouse click.
+      if (e.button === 1) {
+        window.open(`/${id}`, '_blank');
+
+        return;
+      }
+
+      navigate(`/${id}`);
+    },
+    [id, navigate],
+  );
+
+  const onButtonClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      window.open(`/${id}`, '_blank');
+
+      e.stopPropagation();
+    },
+    [id],
+  );
+
   const onEnterClick = useCallback(
     (keyboardEvent: React.KeyboardEvent<HTMLDivElement>) => {
-      if (keyboardEvent.key === "Enter") {
-        onClick();
+      if (keyboardEvent.key === 'Enter') {
+        navigate(`/${id}`);
       }
     },
-    []
+    [id, navigate],
   );
 
   return (
-    <CardBase
+    <Base
       variants={cardBaseVariants}
       initial="rest"
       whileHover="hover"
@@ -34,15 +60,13 @@ export const RecipeCard: FunctionComponent<CardProps> = ({
       onKeyPress={onEnterClick}
       data-testid="card"
     >
-      <div>
-        <CardHeader views={views} favorite={favorite} />
-        <CardContent
-          imageSrc={imageSrc}
-          name={name}
-          description={description}
-        />
-      </div>
-      <IngredientsContainer ingredients={ingredients} />
-    </CardBase>
+      <Content picture={picture} name={name} description={description} />
+      <Ingredients ingredients={ingredients} />
+      <ButtonContainer>
+        <Button height="30px" width="100%" onClick={onButtonClick}>
+          Open recipe in new page
+        </Button>
+      </ButtonContainer>
+    </Base>
   );
 };

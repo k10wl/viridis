@@ -1,17 +1,14 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+const DOTENV = dotenv.config();
 
-const envFound = dotenv.config();
-
-if (envFound.error) {
-  throw new Error("Could not find .env file.");
+if (DOTENV.error) {
+  throw new Error('Could not find .env file.');
 }
 
-const config = {
-  PORT: process.env.PORT || 8080,
-  JWT_TOKEN: process.env.JWT_TOKEN,
+export const CONFIG = {
+  PORT: process.env.PORT || 3000,
   MONGO_DATABASE_CONNECTION: process.env.MONGO_DATABASE_CONNECTION,
-};
-
-export default config;
+  MONGO_DATABASE_NAME: process.env.MONGO_DATABASE_NAME,
+  DEBUG_NAMESPACE: 'Viridis:server',
+} as const;

@@ -1,38 +1,38 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-export const backgroundColor1 = "#fbfdfd";
-export const backgroundColor2 = "#f1f4f4";
-export const backgroundColor3 = "#f2f3f5";
+export const BACKGROUND_COLOR_1 = '#FBFDFD';
+export const BACKGROUND_COLOR_2 = '#F1F4F4';
+export const BACKGROUND_COLOR_3 = '#F2F3F5';
 
-export const textColor1 = "#bebab9";
-export const textColor2 = "#696262";
-export const textColor3 = "#121111";
+export const TEXT_COLOR_1 = '#BEBAB9';
+export const TEXT_COLOR_2 = '#696262';
+export const TEXT_COLOR_3 = '#121111';
 
-export const primaryColor1 = "#c67258";
-export const primaryColor2 = "#bc684e";
-export const primaryColor3 = "#8d4f3a";
+export const PRIMARY_COLOR_1 = '#C67258';
+export const PRIMARY_COLOR_2 = '#BC684E';
+export const PRIMARY_COLOR_3 = '#8D4F3A';
 
-export const accentColor1 = "#244e4b";
-export const accentColor2 = "#183634";
-export const accentColor3 = "#2f605d";
+export const ACCENT_COLOR_1 = '#244E4B';
+export const ACCENT_COLOR_2 = '#183634';
+export const ACCENT_COLOR_3 = '#2F605D';
 
-const Colors = createGlobalStyle`
+export const Colors = createGlobalStyle`
   :root {
-    --background-color-1: ${backgroundColor1};
-    --background-color-2: ${backgroundColor2};
-    --background-color-3: ${backgroundColor3};
+    --background-color-1: ${BACKGROUND_COLOR_1};
+    --background-color-2: ${BACKGROUND_COLOR_2};
+    --background-color-3: ${BACKGROUND_COLOR_3};
 
-    --text-color-1: ${textColor1};
-    --text-color-2: ${textColor2};
-    --text-color-3: ${textColor3};
+    --text-color-1: ${TEXT_COLOR_1};
+    --text-color-2: ${TEXT_COLOR_2};
+    --text-color-3: ${TEXT_COLOR_3};
 
-    --accent-color-1: ${accentColor1};
-    --accent-color-2: ${accentColor1};
-    --accent-color-3: ${accentColor2};
+    --accent-color-1: ${ACCENT_COLOR_1};
+    --accent-color-2: ${ACCENT_COLOR_1};
+    --accent-color-3: ${ACCENT_COLOR_2};
 
-    --primary-color-1: ${primaryColor1};
-    --primary-color-2: ${primaryColor2};
-    --primary-color-3: ${primaryColor3};
+    --primary-color-1: ${PRIMARY_COLOR_1};
+    --primary-color-2: ${PRIMARY_COLOR_2};
+    --primary-color-3: ${PRIMARY_COLOR_3};
   }
 `;
 

@@ -1,75 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RecipeCard component 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
+.c10 {
+  min-width: 100%;
+  height: 30px;
+  outline: none;
   border: none;
-  border-radius: 50%;
-  padding: 3px 0 0;
-  margin: 0;
-  background-color: transparent;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Roboto',sans-serif;
+}
+
+.c10:hover {
   cursor: pointer;
 }
 
-.c3:focus-visible {
-  outline: 3px solid #c6725880;
-  outline-offset: 3px;
+.c10:focus-visible {
+  outline: 3px solid #C6725880;
+  outline-offset: 1px;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 10px 10px 5px;
+  margin: 0;
 }
 
 .c2 {
-  padding: 0 5px;
-  color: #696262;
+  min-height: 255px;
 }
 
-.c4 {
-  height: 280px;
+.c3 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  height: 255px;
+  min-height: 255px;
   width: 100%;
   object-fit: cover;
 }
 
-.c5 {
-  padding: 10px 10px 10px;
+.c4 {
+  padding: 0 10px;
+  margin: 5px 0 0;
   color: #121111;
-  font-family: "PT Serif Bold",serif;
-  font-size: 1.125rem;
+  font-family: 'PT Serif Bold',serif;
+  font-size: 1.25rem;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c6 {
+.c5 {
   padding: 0 10px;
+  margin: 7px 0 6px;
   color: #696262;
-  font-family: "Roboto Thin",sans-serif;
+  font-family: 'Roboto Thin',sans-serif;
   font-size: 0.875rem;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -79,23 +68,17 @@ exports[`RecipeCard component 1`] = `
   white-space: normal;
 }
 
-.c10 {
-  min-width: 150px;
-  height: 50px;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  font-family: "Roboto",sans-serif;
-  font-size: 1rem;
-}
-
-.c10:hover {
-  cursor: pointer;
-}
-
-.c10:focus-visible {
-  outline: 3px solid #c6725880;
-  outline-offset: 1px;
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  overflow: hidden;
 }
 
 .c7 {
@@ -103,48 +86,32 @@ exports[`RecipeCard component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  height: 143px;
-  margin-top: auto;
-  padding: 10px 10px;
-  background-color: #f2f3f5;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 5px;
-  padding: 0;
-  max-height: 66px;
+  padding: 5px 10px;
+  margin: 0;
+  max-height: 45px;
+  list-style-position: inside;
   overflow: hidden;
-  list-style-type: none;
 }
 
-.c9 {
-  padding: 3px 10px;
+.c8 {
+  padding: 3px 10px 3px 4px;
   border-radius: 4px;
   text-align: center;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  color: #fbfdfd;
-  background-color: #244e4b;
-  font-family: "Roboto Thin",sans-serif;
+  color: #FBFDFD;
+  background-color: #244E4B;
+  font-family: 'Roboto Thin',sans-serif;
   font-size: 0.75rem;
 }
 
@@ -160,117 +127,93 @@ exports[`RecipeCard component 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  cursor: pointer;
-  overflow: hidden;
-  width: 340px;
-  height: 550px;
-  border: 2px solid #244e4b;
+  width: 300px;
+  max-width: 300px;
+  height: 445px;
+  max-height: 445px;
+  border: 1px solid black;
   border-radius: 7px;
-  margin: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(36,78,75,0);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.c0:focus-visible {
-  outline: 3px solid #c6725880;
-  outline-offset: 3px;
+.c9 {
+  padding: 5px;
 }
 
 <div
   className="c0"
   data-testid="card"
-  onClick={[MockFunction]}
+  onClick={[Function]}
   onKeyPress={[Function]}
   style={
     Object {
-      "backgroundColor": "#fbfdfd",
+      "backgroundColor": "#FBFDFD",
     }
   }
   tabIndex={0}
 >
-  <div>
+  <figure
+    className="c1"
+  >
     <div
-      className="c1"
+      className="c2"
     >
-      <span>
-        <svg
-          fill="#bebab9"
-          width={14}
-        >
-          eye-regular.svg
-        </svg>
-        <span
-          className="c2"
-        >
-          3
-        </span>
-      </span>
-      <button
+      <img
+        alt="Orexis, orgia, et ausus."
         className="c3"
-        data-testid="favorite-button"
-        onClick={[Function]}
-      >
-        <svg
-          data-testid="regular-icon"
-          fill="#bebab9"
-          style={
-            Object {
-              "opacity": 1,
-              "transform": "none",
-              "transformOrigin": "center",
-            }
-          }
-          width="100%"
-        >
-          heart-regular.svg
-        </svg>
-      </button>
+        data-testid="image"
+        src="Eheu, homo!"
+      />
     </div>
-    <img
-      alt="Orexis, orgia, et ausus."
+    <figcaption
       className="c4"
-      data-testid="image"
-      src="Eheu, homo!"
-    />
+    >
+      Orexis, orgia, et ausus.
+    </figcaption>
     <p
       className="c5"
     >
-      Orexis, orgia, et ausus.
-    </p>
-    <p
-      className="c6"
-    >
       Cur turpis observare?
     </p>
-  </div>
+  </figure>
   <div
-    className="c7"
+    className="c6"
   >
     <ul
-      className="c8"
+      className="c7"
     >
       <li
-        className="c9"
+        className="c8"
       >
-        Planeta
+        авокадо
       </li>
       <li
-        className="c9"
+        className="c8"
       >
-        Brodiums
+        манго
       </li>
     </ul>
+  </div>
+  <div
+    className="c9"
+  >
     <button
       className="c10"
-      disabled={false}
-      height={50}
+      height="30px"
       onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "#c67258",
-          "border": "#c67258 solid 0",
-          "color": "#fbfdfd",
+          "backgroundColor": "#C67258",
+          "border": "#C67258 solid 0",
+          "color": "#FBFDFD",
         }
       }
       type="button"
+      width="100%"
     >
       Open recipe in new page
     </button>

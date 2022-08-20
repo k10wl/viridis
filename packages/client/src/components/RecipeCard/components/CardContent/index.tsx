@@ -1,19 +1,28 @@
-import React from "react";
+import React, { ReactElement } from 'react';
 
-import { CardProps } from "src/components/RecipeCard/types";
+import { RecipeProps } from 'src/components/RecipeCard/type';
 
-import { CardDescription, CardImage, CardName } from "./styles";
+import {
+  Figure,
+  Figurecaption,
+  FoodDescription,
+  Image,
+  ImageContainer,
+} from './style';
 
-type CardContentT = Pick<CardProps, "imageSrc" | "name" | "description">;
+type Props = Pick<RecipeProps, 'picture' | 'name' | 'description'>;
 
-export const CardContent: React.FC<CardContentT> = ({
+export const Content = ({
   name,
-  imageSrc,
+  picture,
   description,
-}) => (
-  <>
-    <CardImage src={imageSrc} alt={name} />
-    <CardName>{name}</CardName>
-    <CardDescription>{description}</CardDescription>
-  </>
+}: Props): ReactElement => (
+  <Figure>
+    <ImageContainer>
+      <Image src={picture} alt={name} />
+    </ImageContainer>
+
+    <Figurecaption>{name}</Figurecaption>
+    <FoodDescription>{description}</FoodDescription>
+  </Figure>
 );

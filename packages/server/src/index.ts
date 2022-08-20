@@ -1,20 +1,23 @@
-import express from "express";
+import 'dotenv/config';
 
-import config from "src/config";
-import loaders from "src/loaders";
+import express from 'express';
 
-const startServer: () => Promise<void> = async () => {
+import { CONFIG } from 'src/config';
+import { loadApp } from 'src/loaders';
+import { debugLog } from 'src/utils';
+
+async function startServer(): Promise<void> {
   try {
     const expressApp = express();
 
-    await loaders({ expressApp });
+    await loadApp({ expressApp });
 
-    expressApp.listen(config.PORT, () => {
-      console.log(`Listening on port: ${config.PORT}.`);
+    expressApp.listen(CONFIG.PORT, () => {
+      debugLog(`Listening on port: ${CONFIG.PORT}.`);
     });
   } catch (error) {
-    console.error(error);
+    debugLog(error);
   }
-};
+}
 
-startServer().catch((error) => console.error(error));
+startServer().catch(error => debugLog(error));

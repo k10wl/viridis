@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { magnifyingGlassVariants, useBoxAnimations } from "./animations";
-import { Input, SearchBase, SearchButton, SearchIcon } from "./styles";
+import { magnifyingGlassVariants, useBoxAnimations } from './animation';
+import { Input, SearchBase, SearchButton, SearchIcon } from './style';
 
 export const NavBarSearch: React.FC = () => {
   const [openSearch, setOpenSearch] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState('');
 
   const searchBaseRef = useRef<HTMLSpanElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -19,17 +19,17 @@ export const NavBarSearch: React.FC = () => {
 
   const handleSearchClick = useCallback(() => {
     if (openSearch && searchInput.trim()) {
-      console.log(searchInput); // TODO: replace log with function
+      // TODO: create search function
     }
     if (!openSearch) {
       setOpenSearch(true);
     }
-  }, [openSearch]);
+  }, [openSearch, searchInput]);
 
   const handleSearchInput = useCallback(
     (changeEvent: React.ChangeEvent<HTMLInputElement>) =>
       setSearchInput(changeEvent.currentTarget.value),
-    [searchInput, setSearchInput]
+    [setSearchInput],
   );
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const NavBarSearch: React.FC = () => {
       >
         <SearchIcon
           variants={magnifyingGlassVariants}
-          animate={openSearch ? "open" : "rest"}
+          animate={openSearch ? 'open' : 'rest'}
           width="100%"
         />
       </SearchButton>

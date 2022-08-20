@@ -1,32 +1,20 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
-import NavBar from "./components/NavBar";
-import { useStyledUtils } from "./hooks";
-import { Router } from "./router";
-import store from "./store";
-import GlobalStyles from "./stylesheets";
+import { NavBar } from './components';
+import { Router } from './router';
+import store from './store';
+import GlobalStyles from './stylesheets';
 
-const App: React.FC = () => {
-  const utils = useStyledUtils();
-
-  const theme = {
-    ...utils,
-  };
-
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <BrowserRouter>
-          <NavBar />
-          <Router />
-        </BrowserRouter>
-      </ThemeProvider>
-    </Provider>
-  );
-};
+const App: React.FC = () => (
+  <Provider store={store}>
+    <GlobalStyles />
+    <BrowserRouter>
+      <NavBar />
+      <Router />
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;
