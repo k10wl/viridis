@@ -1,8 +1,4 @@
-import {
-  CATEGORIES_TREE,
-  INGREDIENT_NAMES,
-  QUANTITY_TYPES,
-} from 'root/constants';
+import { AMOUNT_TYPES, CATEGORIES_TREE, INGREDIENT_NAMES } from '../constants';
 
 type Categories = keyof typeof CATEGORIES_TREE;
 type Category<T extends Categories> = typeof CATEGORIES_TREE[T];
@@ -15,7 +11,7 @@ type Sweets = typeof CATEGORIES_TREE.sweets.categoryId;
 
 export interface Amount {
   value: string;
-  type: typeof QUANTITY_TYPES[number];
+  type: typeof AMOUNT_TYPES[number];
 }
 
 export interface Ingredient {
@@ -29,7 +25,7 @@ export interface RecipeBase {
   cooking: string;
   description: string;
   ingredients: Array<Ingredient>;
-  picture: string;
+  picture?: string;
 }
 
 interface RecipeClassificationBase<T extends Categories> {
@@ -47,13 +43,13 @@ type CategoryRecipe<T extends Categories> = RecipeBase &
 
 type BreakfastRecipe = CategoryRecipe<Breakfast>;
 type LunchRecipe = CategoryRecipe<Lunch>;
-type MiscRecipe = CategoryRecipe<Miscellaneous>;
+type MiscellaneousRecipe = CategoryRecipe<Miscellaneous>;
 type SnacksRecipe = CategoryRecipe<Snacks>;
 type SweetsRecipe = CategoryRecipe<Sweets>;
 
 export type Recipe =
   | BreakfastRecipe
   | LunchRecipe
-  | MiscRecipe
+  | MiscellaneousRecipe
   | SnacksRecipe
   | SweetsRecipe;

@@ -1,3 +1,3 @@
 export * from './categories';
 export * from './ingredientNames';
-export * from './quantityTypes';
+export * from './amountTypes';
