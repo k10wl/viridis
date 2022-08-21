@@ -1,4 +1,4 @@
-export const QUANTITY_TYPES = [
+export const AMOUNT_TYPES = [
   'teaspoon',
   'tablespoon',
   'piece',

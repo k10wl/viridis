@@ -1,4 +1,4 @@
-import { getKeys } from 'root/utils/getKeys';
+import { getKeys } from '../utils/getKeys';
 
 export const SUBCATEGORIES = {
   baking: {
@@ -81,7 +81,7 @@ export const SWEETS_SUBCATEGORIES = {
   souffle: SUBCATEGORIES.souffle,
 } as const;
 
-export const MISC_SUBCATEGORIES = {
+export const MISCELLANEOUS_SUBCATEGORIES = {
   base: SUBCATEGORIES.base,
   dough: SUBCATEGORIES.dough,
   filling: SUBCATEGORIES.filling,
@@ -101,7 +101,7 @@ export const CATEGORIES_TREE = {
   miscellaneous: {
     categoryId: 'miscellaneous',
     displayName: 'Miscellaneous',
-    subcategories: MISC_SUBCATEGORIES,
+    subcategories: MISCELLANEOUS_SUBCATEGORIES,
   },
   snacks: {
     categoryId: 'snacks',

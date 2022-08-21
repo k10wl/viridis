@@ -1,12 +1,61 @@
 import mongoose from 'mongoose';
 
 import {
+  AMOUNT_TYPES,
   CATEGORIES_ID_ARRAY,
+  CATEGORIES_TREE,
+  INGREDIENT_NAMES,
   SUBCATEGORIES_ID_ARRAY,
 } from '@viridis/shared/constants';
-import { Recipe } from '@viridis/shared/types';
+import { Amount, Ingredient, Recipe as RecipeT } from '@viridis/shared/types';
 
-const RecipeSchema = new mongoose.Schema<Recipe>({
+function isSubcategoryRequired(this: RecipeT): boolean {
+  return this.category !== 'snacks';
+}
+
+function isCorrectlyClassifiedRecipe(this: RecipeT): boolean {
+  const recipeCategory: typeof CATEGORIES_ID_ARRAY[number] = this.category;
+
+  let recipeSubcategory: typeof SUBCATEGORIES_ID_ARRAY[number] | null = null;
+
+  if ('subcategory' in this) {
+    recipeSubcategory = this.subcategory;
+  } else {
+    return recipeCategory === 'snacks';
+  }
+
+  const validSubcategories = Object.keys(
+    CATEGORIES_TREE[recipeCategory].subcategories,
+  );
+
+  return validSubcategories.includes(recipeSubcategory);
+}
+
+const AmountSchema = new mongoose.Schema<Amount>({
+  type: {
+    type: String,
+    required: true,
+    enum: AMOUNT_TYPES,
+  },
+  value: {
+    type: String,
+    required: true,
+  },
+});
+
+const IngredientSchema = new mongoose.Schema<Ingredient>({
+  name: {
+    type: String,
+    required: true,
+    enum: INGREDIENT_NAMES,
+  },
+  amount: {
+    type: AmountSchema,
+    required: true,
+  },
+});
+
+const RecipeSchema = new mongoose.Schema<RecipeT>({
   id: {
     type: String,
     required: true,
@@ -35,10 +84,9 @@ const RecipeSchema = new mongoose.Schema<Recipe>({
     trim: true,
   },
   ingredients: {
-    type: [String],
+    type: [IngredientSchema],
     required: true,
   },
-
   picture: {
     type: String,
     required: true,
@@ -53,9 +101,11 @@ const RecipeSchema = new mongoose.Schema<Recipe>({
   },
   subcategory: {
     type: String,
-    required: true,
-    enum: SUBCATEGORIES_ID_ARRAY,
+    required: isSubcategoryRequired,
+    validate: [isCorrectlyClassifiedRecipe, 'Invalid recipe'],
   },
 });
 
-export const RecipeModel = mongoose.model<Recipe>('Product', RecipeSchema);
+export const Recipe = mongoose.model<RecipeT>('Product', RecipeSchema);
+
+export { recipeJoi } from './recipeJoi';
