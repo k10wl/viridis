@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import Joi, { ValidationError } from 'joi';
 
 import {
   AMOUNT_TYPES,
@@ -6,7 +6,7 @@ import {
   CATEGORIES_TREE,
   INGREDIENT_NAMES,
 } from '@viridis/shared/constants';
-import { Ingredient, Recipe } from '@viridis/shared/types';
+import { Ingredient, Recipe as RecipeT, Recipe } from '@viridis/shared/types';
 
 const ingredientJoi = Joi.object<Ingredient>({
   name: Joi.string()
@@ -49,7 +49,7 @@ const subcategoryJoi = Joi.when('category', {
       .required(),
   });
 
-export const recipeJoi = Joi.object<Recipe>({
+const recipeJoi = Joi.object<Recipe>({
   id: Joi.string().id().required(),
   name: Joi.string().min(1).max(255).trim(),
   description: Joi.string().min(1).max(65535).trim().required(),
@@ -61,3 +61,11 @@ export const recipeJoi = Joi.object<Recipe>({
     .required(),
   subcategory: subcategoryJoi,
 });
+
+export function validateRecipe(recipeData: RecipeT): void {
+  const { error } = recipeJoi.validate(recipeData);
+
+  if (error) {
+    throw new ValidationError(error.message, error.details, error._original);
+  }
+}

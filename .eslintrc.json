@@ -176,7 +176,10 @@
     ],
     "quotes": [
       2,
-      "single"
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
     ],
     "react/function-component-definition": [
       2,

@@ -1,0 +1,1 @@
+export { recipesRoute } from './recipesRoute';

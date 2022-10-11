@@ -9,6 +9,10 @@ import {
 } from '@viridis/shared/constants';
 import { Amount, Ingredient, Recipe as RecipeT } from '@viridis/shared/types';
 
+import { RecipeDocument } from 'src/types';
+
+export { validateRecipe } from './recipeJoi';
+
 function isSubcategoryRequired(this: RecipeT): boolean {
   return this.category !== 'snacks';
 }
@@ -18,6 +22,7 @@ function isCorrectlyClassifiedRecipe(this: RecipeT): boolean {
 
   let recipeSubcategory: typeof SUBCATEGORIES_ID_ARRAY[number] | null = null;
 
+  // Subcategory does not exist in the 'snacks' category.
   if ('subcategory' in this) {
     recipeSubcategory = this.subcategory;
   } else {
@@ -31,7 +36,7 @@ function isCorrectlyClassifiedRecipe(this: RecipeT): boolean {
   return validSubcategories.includes(recipeSubcategory);
 }
 
-const AmountSchema = new mongoose.Schema<Amount>({
+const amountSchema = new mongoose.Schema<Amount>({
   type: {
     type: String,
     required: true,
@@ -43,21 +48,22 @@ const AmountSchema = new mongoose.Schema<Amount>({
   },
 });
 
-const IngredientSchema = new mongoose.Schema<Ingredient>({
+const ingredientSchema = new mongoose.Schema<Ingredient>({
   name: {
     type: String,
     required: true,
     enum: INGREDIENT_NAMES,
   },
   amount: {
-    type: AmountSchema,
+    type: amountSchema,
     required: true,
   },
 });
 
-const RecipeSchema = new mongoose.Schema<RecipeT>({
+const recipeSchema = new mongoose.Schema<RecipeT>({
   id: {
     type: String,
+    unique: true,
     required: true,
     min: 1,
     max: 255,
@@ -84,7 +90,7 @@ const RecipeSchema = new mongoose.Schema<RecipeT>({
     trim: true,
   },
   ingredients: {
-    type: [IngredientSchema],
+    type: [ingredientSchema],
     required: true,
   },
   picture: {
@@ -106,6 +112,4 @@ const RecipeSchema = new mongoose.Schema<RecipeT>({
   },
 });
 
-export const Recipe = mongoose.model<RecipeT>('Product', RecipeSchema);
-
-export { recipeJoi } from './recipeJoi';
+export const Recipe = mongoose.model<RecipeDocument>('Recipe', recipeSchema);

@@ -1,15 +1,17 @@
-import { recipeJoi } from '../recipeJoi';
+import { Recipe } from '@viridis/shared/types';
+
+import { validateRecipe } from '../recipeJoi';
 import { INVALID_RECIPE_ARRAY, VALID_RECIPE } from './recipesData.helper';
 
-describe('recipeJoi', () => {
+describe('validateRecipe', () => {
   test('should not throw error with valid recipe', () => {
-    expect(recipeJoi.validate(VALID_RECIPE)).not.toHaveProperty('error');
+    expect(() => validateRecipe(VALID_RECIPE)).not.toThrowError();
   });
 
   test.each(INVALID_RECIPE_ARRAY)(
     'should have error property for invalid recipes',
     invalidRecipe => {
-      expect(recipeJoi.validate(invalidRecipe)).toHaveProperty('error');
+      expect(() => validateRecipe(invalidRecipe as Recipe)).toThrowError();
     },
   );
 });
